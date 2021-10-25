@@ -1,7 +1,37 @@
 #app {
-  max-height: 100em;
-  border: 2px solid royalblue;
   margin: 0;
   padding: 1px;
   font-family: monospace;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 99.7vh;
+  max-height: 100%;
+  background-image: url("../public/buildings.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: rgb(243, 243, 243);
+}
+
+#app > .x-padding {
+  padding: 3px 10%;
+}
+
+.slide {
+  display: flex;
+  overflow: auto;
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+#app::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+#app {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

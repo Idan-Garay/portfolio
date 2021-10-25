@@ -3,7 +3,7 @@ import "./Project.css";
 
 const Project = () => {
   return (
-    <div id="project-section">
+    <div id="project-section" className="slide y">
       <h1>Projects</h1>
       <div id="projects">
         <div className="project">

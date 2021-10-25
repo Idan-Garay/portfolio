@@ -3,7 +3,7 @@ import "./Education.css";
 
 const Education = () => {
   return (
-    <section id="education-section">
+    <div id="education-section" className="slide x-padding">
       <h1>Education</h1>
       <div id="schools">
         <div className="school">
@@ -23,7 +23,7 @@ const Education = () => {
           <span className="sy">2006 - 2012</span>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -4,13 +4,15 @@ import "./Header.css";
 
 const Header = () => {
   return (
-    <header>
-      <NavBar />
-      <h1>
-        Hi, <br />
-        I'm Idan <br />
-        web developer.
-      </h1>
+    <header className="slide y x-padding">
+      <div>
+        <h1>
+          Hi, <br />
+          I'm Idan <br />
+          web developer.
+        </h1>
+        <NavBar />
+      </div>
     </header>
   );
 };
