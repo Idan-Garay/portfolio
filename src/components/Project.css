@@ -1,0 +1,14 @@
+#project-section {
+  border: 2px dashed green;
+  height: 20em;
+}
+
+.project {
+  border: 1px solid black;
+}
+
+.project img {
+  border: 2px solid red;
+  height: 50px;
+  width: 75px;
+}

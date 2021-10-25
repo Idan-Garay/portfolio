@@ -1,0 +1,15 @@
+#education-section {
+  border: 2px dashed salmon;
+  height: 20em;
+}
+
+.schools {
+  display: flex;
+  flex-direction: column;
+}
+
+.school {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}

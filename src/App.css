@@ -1,0 +1,7 @@
+#app {
+  max-height: 100em;
+  border: 2px solid royalblue;
+  margin: 0;
+  padding: 1px;
+  font-family: monospace;
+}
