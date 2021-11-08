@@ -1,12 +1,68 @@
-#project-section {
-  height: 20em;
+#project {
+  height: 200px;
+
+  display: flex;
+  background-color: rgb(245, 245, 245);
+  border-radius: 5px;
+  margin-top: 2em;
 }
 
-.project {
+#project .left-section {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  margin-right: 15px;
+}
+
+#project .right-section {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  padding: 10px;
+}
+
+#project .left-section img {
+  min-height: 100px;
+  height: 100%;
+  width: 200px;
   border: 1px solid black;
 }
 
-.project img {
-  height: 50px;
-  width: 75px;
+#project .right-section p {
+  height: 100px;
+  width: 300px;
+  padding-top: 3px;
+}
+
+.links {
+  margin-top: 15px;
+}
+
+.flex-no-wrap {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.link {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  border: 1px solid black;
+  padding: 3px 5px;
+  width: 80px;
+  margin-right: 8px;
+}
+
+.link span {
+  margin-left: 3px;
+}
+
+.links a {
+  text-decoration: none;
+  color: black;
+}
+
+.link:hover {
+  background: black;
+  color: white;
 }

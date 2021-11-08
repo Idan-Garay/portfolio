@@ -1,15 +1,21 @@
 import React from "react";
 import "./App.css";
-import Header from "./components/Header";
+import Contact from "./components/Contact";
 import Education from "./components/Education";
-import Project from "./components/Project";
+import Header from "./components/Header";
+import Work from "./components/Work";
+import NavBar from "./components/NavBar";
 
 const App = () => {
   return (
     <div id="app">
-      <Header />
-      <Education className="" />
-      <Project className="" />
+      <NavBar />
+      <div className="px-10">
+        <Header />
+        <Education />
+        <Contact />
+        <Work />
+      </div>
     </div>
   );
 };

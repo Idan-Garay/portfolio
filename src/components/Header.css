@@ -1,40 +1,43 @@
-header {
-  border: 1px solid black;
-  padding-bottom: 3em;
+.header {
+  height: 100vh;
+  font-size: 40px;
+  padding-top: 2em;
 }
 
-header h1 {
-  font-size: 50px;
-  padding-top: 3em;
-}
-
-header nav {
-  margin-top: 1em;
-}
-
-nav ul {
-  list-style-type: none;
+.about-flex {
   display: flex;
-  flex-wrap: nowrap;
 }
 
-header nav ul li {
-  margin-right: 0.5em;
-  padding: 1em;
-  height: 1em;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+.about-flex h1 {
+  width: 45%;
+  margin-right: 20px;
+}
+
+.about-flex p {
+  font-size: 30px;
+  color: #72747c;
+  font-weight: 100;
+  width: 55%;
+  padding-right: 10%;
+}
+
+.skills {
+  margin-top: 3em;
+  font-size: 30px;
+}
+
+.skills-body {
   display: flex;
-  justify-content: center;
-  border-radius: 3px;
-  width: 5em;
+  flex-wrap: wrap;
 }
 
-nav ul li a {
-  text-decoration: underline;
-  color: rgb(94, 94, 94);
-}
-
-header nav ul li:hover {
-  background-color: black;
-  color: white;
+.skill {
+  font-size: 20px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  text-transform: uppercase;
+  padding: 8px 10px;
+  width: auto;
+  margin-top: 10px;
+  margin-right: 10px;
 }

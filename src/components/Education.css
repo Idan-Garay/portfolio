@@ -1,8 +1,16 @@
-#education-section {
+#education {
+  padding-top: 2em;
   display: flex;
   flex-direction: row;
-  background-color: white;
   color: rgb(53, 53, 53);
+}
+
+#education .content {
+  background-color: white;
+  height: 60%;
+  width: 100%;
+  padding: 1em;
+  border-radius: 5px;
 }
 
 #schools {

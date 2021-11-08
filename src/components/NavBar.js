@@ -4,12 +4,17 @@ import { MdClose } from "react-icons/md";
 
 const NavBar = () => {
   return (
-    <nav>
+    <nav className="slide-nav" id="about">
       <ul>
-        <li>About Me</li>
-        <li>Education</li>
-        <li>Projects</li>
-        <li>Resume</li>
+        <a href="#work">
+          <li className="view-work">View Work</li>
+        </a>
+        <a href="#contact">
+          <li>Contact</li>
+        </a>
+        <a href="#about">
+          <li>About</li>
+        </a>
       </ul>
     </nav>
   );
