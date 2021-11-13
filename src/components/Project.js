@@ -3,11 +3,12 @@ import "./Project.css";
 import { IoLogoGithub } from "react-icons/io";
 import { VscLiveShare } from "react-icons/vsc";
 
-const Project = ({ projectName, github, live, description }) => {
+const Project = ({ image, projectName, github, live, description }) => {
+  console.log(image);
   return (
     <div id="project" className="slide y">
       <div className="left-section">
-        <img src="#" alt="projImg" />
+        <img src={image} alt="projImg" />
       </div>
       <div className="right-section">
         <h2>{projectName}</h2>

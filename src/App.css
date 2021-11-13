@@ -16,6 +16,7 @@
   background-size: cover;
   background-color: #eeeff1;
   color: black;
+  scroll-behavior: smooth;
 }
 
 #app > .x-padding {

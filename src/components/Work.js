@@ -5,6 +5,7 @@ import "./Work.css";
 const Work = () => {
   const projects = [
     {
+      image: "../../public/fakestore.png",
       projectName: "Fake Store",
       github: "https://github.com/Idan-Garay/fake-store",
       live: "#",
@@ -12,6 +13,7 @@ const Work = () => {
         "A basic e-commerce using the fake-store api showing fetched items and a shopping cart using session.",
     },
     {
+      image: "../../public/covid.png",
       projectName: "Covid Reports",
       github: "https://github.com/Idan-Garay/covid",
       live: "#",
@@ -23,8 +25,8 @@ const Work = () => {
   return (
     <div className="slide" id="work">
       <h2>Works</h2>
-      {projects.map((project) => (
-        <Project {...project} />
+      {projects.map((project, index) => (
+        <Project {...project} key={index} />
       ))}
     </div>
   );

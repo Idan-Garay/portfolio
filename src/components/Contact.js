@@ -1,23 +1,48 @@
-import React from "react";
+import React, { useRef } from "react";
+import emailjs from "emailjs-com";
+
 import "./Contact.css";
 
 const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_9jg5cpe",
+        "template_93ccbes",
+        form.current,
+        "user_fpv6CYPnfZjJz32J6KSs8"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  };
+
   return (
     <div className="slide" id="contact">
       <div className="content">
         <div className="section-left">Drop a message</div>
-        <div className="section-right">
+        <form ref={form} className="section-right" onSubmit={sendEmail}>
           <div className="input-group flex-col">
-            <label htmlForm="email">Email</label>
+            <label htmlFor="email">Email</label>
             <input
               placeholder="Enter email"
-              name="email"
+              name="user_email"
               id="email"
               className="border-none"
             />
           </div>
           <div className="input-group flex-col">
-            <label htmlForm="message">Message</label>
+            <label htmlFor="message">Message</label>
             <textarea
               placeholder="Enter message"
               name="message"
@@ -26,9 +51,11 @@ const Contact = () => {
             ></textarea>
           </div>
           <div className="input-group">
-            <button className="border-none">Submit</button>
+            <button className="border-none" type="submit">
+              Send
+            </button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );

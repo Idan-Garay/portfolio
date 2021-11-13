@@ -25,9 +25,11 @@ const About = () => {
       <div className="skills">
         <h3>Skills</h3>
         <div className="skills-body">
-          {skills.map((skill) => {
-            return <div className="skill">{skill}</div>;
-          })}
+          {skills.map((skill, index) => (
+            <div className="skill" key={index}>
+              {skill}
+            </div>
+          ))}
         </div>
       </div>
     </div>
