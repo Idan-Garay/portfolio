@@ -8,7 +8,7 @@ const Work = () => {
       image: "../../public/fakestore.png",
       projectName: "Fake Store",
       github: "https://github.com/Idan-Garay/fake-store",
-      live: "#",
+      live: "https://fakestore.idanjoshua.net",
       description:
         "A basic e-commerce using the fake-store api showing fetched items and a shopping cart using session.",
     },
@@ -16,7 +16,7 @@ const Work = () => {
       image: "../../public/covid.png",
       projectName: "Covid Reports",
       github: "https://github.com/Idan-Garay/covid",
-      live: "#",
+      live: "https://covid.idanjoshua.net",
       description:
         "It shows the number of covid cases being reported in different countries using https://covid19.mathdro.id/api.",
     },
