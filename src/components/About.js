@@ -17,9 +17,9 @@ const About = () => {
           Hi, <br /> I'm Idan
         </h1>
         <p>
-          I'm a 3rd year BS Computer Science in University of San Carlos. I like
-          to read tech articles once in a while and I plan to make blogs about
-          it.
+          I'm a 3rd year BS Computer Science college student in University of
+          San Carlos. I like to read tech articles once in a while and I plan to
+          make blogs about it.
         </p>
       </div>
       <div className="skills">

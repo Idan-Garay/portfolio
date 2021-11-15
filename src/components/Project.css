@@ -12,6 +12,7 @@
   flex-wrap: nowrap;
   flex-direction: column;
   margin-right: 15px;
+  padding: 1px;
 }
 
 #project .right-section {
@@ -25,7 +26,8 @@
   min-height: 100px;
   height: 100%;
   width: 200px;
-  border: 1px solid black;
+  border-radius: 5px;
+  border: 1px solid rgb(184, 184, 184);
 }
 
 #project .right-section p {

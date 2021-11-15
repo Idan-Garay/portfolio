@@ -4,7 +4,6 @@ import { IoLogoGithub } from "react-icons/io";
 import { VscLiveShare } from "react-icons/vsc";
 
 const Project = ({ image, projectName, github, live, description }) => {
-  console.log(image);
   return (
     <div id="project" className="slide y">
       <div className="left-section">

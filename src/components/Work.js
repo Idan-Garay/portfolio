@@ -5,7 +5,7 @@ import "./Work.css";
 const Work = () => {
   const projects = [
     {
-      image: "../../public/fakestore.png",
+      image: "./fakestore.png",
       projectName: "Fake Store",
       github: "https://github.com/Idan-Garay/fake-store",
       live: "https://fakestore.idanjoshua.net",
@@ -13,7 +13,7 @@ const Work = () => {
         "A basic e-commerce using the fake-store api showing fetched items and a shopping cart using session.",
     },
     {
-      image: "../../public/covid.png",
+      image: "./covid.png",
       projectName: "Covid Reports",
       github: "https://github.com/Idan-Garay/covid",
       live: "https://covid.idanjoshua.net",
