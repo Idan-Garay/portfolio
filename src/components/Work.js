@@ -20,6 +20,13 @@ const Work = () => {
       description:
         "It shows the number of covid cases being reported in different countries using https://covid19.mathdro.id/api.",
     },
+    {
+      image: "./calculator.png",
+      projectName: "Calculator",
+      github: "https://github.com/Idan-Garay/Calculator",
+      live: "https://calculator.idanjoshua.net",
+      description: "A simple calculator built using ReactJS and TypeScript.",
+    },
   ];
 
   return (
