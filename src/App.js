@@ -10,7 +10,7 @@ const App = () => {
   return (
     <div id="app">
       <NavBar />
-      <div className="px-10">
+      <div className="px-10 app-content">
         <Header />
         <Education />
         <Contact />

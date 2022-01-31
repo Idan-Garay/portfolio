@@ -1,6 +1,7 @@
 .header {
   height: 100vh;
-  font-size: 40px;
+  /* font-size: 40px; */
+  width: 100%;
   padding-top: 2em;
 }
 
@@ -9,21 +10,23 @@
 }
 
 .about-flex h1 {
-  width: 45%;
   margin-right: 20px;
+  width: 50%;
+  border: 1px solid black;
 }
 
 .about-flex p {
-  font-size: 30px;
+  font-size: 1.6rem;
   color: #72747c;
   font-weight: 100;
   width: 55%;
   padding-right: 10%;
+  border: 1px solid black;
 }
 
 .skills {
   margin-top: 3em;
-  font-size: 30px;
+  font-size: 1.6rem;
 }
 
 .skills-body {
@@ -32,7 +35,7 @@
 }
 
 .skill {
-  font-size: 20px;
+  font-size: 1.2rem;
   border: 1px solid gray;
   border-radius: 10px;
   text-transform: uppercase;

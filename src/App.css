@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+body {
+  height: 100%;
+  width: 100%;
+}
+
 #app {
   margin: 0;
   padding: 1px;
@@ -17,6 +22,10 @@
   background-color: #eeeff1;
   color: black;
   scroll-behavior: smooth;
+}
+
+h1 {
+  font-size: 4rem;
 }
 
 #app > .x-padding {
@@ -89,4 +98,17 @@ nav ul li:hover {
   border-radius: 5px;
   background-color: black;
   color: white;
+}
+
+/* Media Queries */
+@media screen and (max-width: 640px) {
+  .about-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
 }
