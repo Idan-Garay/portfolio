@@ -2,7 +2,7 @@ import React from "react";
 import "./Work.css";
 import { VscGithubInverted, VscLiveShare } from "react-icons/vsc";
 
-const Work = ({ title, desc, skillSet }) => {
+const Work = ({ title, desc, skillSet, links }) => {
   return (
     <div className="work">
       <h3 className="work-title">{title}</h3>
@@ -16,8 +16,12 @@ const Work = ({ title, desc, skillSet }) => {
           ))}
         </div>
         <div className="bottom-display-container">
+          {/* <a href={links[0]}> */}
           <VscGithubInverted size={30} className="platform" />
-          <VscLiveShare size={30} className="platform" />
+          {/* </a> */}
+          <a href={links[1]}>
+            <VscLiveShare size={30} className="platform" />
+          </a>
         </div>
       </div>
     </div>
