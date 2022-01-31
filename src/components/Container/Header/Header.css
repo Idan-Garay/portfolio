@@ -1,0 +1,14 @@
+.header {
+  margin-top: 30%;
+  border: 1px solid white;
+}
+
+.intro-name {
+  font-size: 45px;
+  width: 80%;
+}
+
+.work-position {
+  color: var(--color-2);
+  margin-top: -10px;
+}

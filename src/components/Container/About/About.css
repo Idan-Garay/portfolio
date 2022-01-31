@@ -1,0 +1,15 @@
+.section-title {
+  color: var(--color-3);
+  margin-top: 3em;
+}
+
+.about p {
+  margin-top: 1em;
+}
+
+.skillset {
+  margin-top: 1em;
+  columns: 2;
+  list-style-type: square;
+  padding: 0 2em;
+}

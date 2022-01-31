@@ -1,0 +1,48 @@
+.work {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-4);
+  padding: 1em;
+  margin-top: 1em;
+}
+
+.work-title {
+  color: var(--color-2);
+}
+
+.work-paragraph {
+  margin-top: 1em;
+}
+
+.bottom-display {
+  margin-top: 2em;
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.bottom-display-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  min-width: 30%;
+}
+
+.skill {
+  color: var(--color-skill);
+  cursor: default;
+  margin-right: 0.5em;
+  white-space: nowrap;
+}
+
+.bottom-display-container:nth-child(1) {
+  max-width: 60%;
+  width: 60%;
+  justify-content: left;
+}
+
+.platform:hover {
+  color: var(--color-2);
+  cursor: pointer;
+}

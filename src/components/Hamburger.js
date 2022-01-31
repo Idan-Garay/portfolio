@@ -4,8 +4,8 @@ import "./Hamburger.css";
 
 const Hamburger = () => {
   return (
-    <div>
-      <MdOutlineSubject />
+    <div className="hamburger-cont">
+      <MdOutlineSubject size={"100%"} style={{ transform: "scaleX(-1)" }} />
     </div>
   );
 };

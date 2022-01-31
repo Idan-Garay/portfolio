@@ -1,0 +1,11 @@
+.navbar {
+  background-color: var(--color-1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-end; /* aligns on vertical for column */
+  align-items: center;
+}
