@@ -1,18 +1,28 @@
 * {
-  box-sizing: border-box;
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
 }
 
 body {
-  width: 100%;
-  min-width: 320px;
-  font-family: var(--font-family);
-  color: var(--color-subtext);
+  font-size: 1rem;
   background-color: var(--color-bg);
-  padding: 0 2em;
-  display: flex;
-  justify-content: center;
+  color: var(--color-subtext);
+  font-family: var(--font-family);
+}
+
+.container {
+  padding: 0 1rem;
+  max-width: 60rem;
+  margin: 0 auto;
+  margin-top: 5rem;
+  min-height: 40rem;
+  max-height: 60rem;
+  min-width: 10rem;
 }
 
 a {
@@ -30,10 +40,12 @@ a:hover {
   cursor: pointer;
 }
 
-/* Media Queries */
+/* 
+
+Media Queries
 @media screen and (max-width: 320px) {
   #app {
     display: flex;
     flex-direction: column;
   }
-}
+} */

@@ -12,7 +12,7 @@ const skillSet = [
 
 const About = () => {
   return (
-    <div className="about">
+    <div className="about container">
       <h3 className="section-title">About me</h3>
       <p>
         Hello! My name is Idan and I enjoy building things on the internet. My

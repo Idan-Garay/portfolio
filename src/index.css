@@ -11,8 +11,3 @@
   --color-subtext: white;
   --color-skill: #cbebb4;
 }
-
-html {
-  min-width: 320px;
-  height: 100%;
-}

@@ -37,7 +37,7 @@ const works = [
 
 const Projects = () => {
   return (
-    <div className="projects">
+    <div className="projects container">
       <h3 className="section-title">Personal Projects</h3>
       {works.map((values) => (
         <Work key={values.id} {...values} />

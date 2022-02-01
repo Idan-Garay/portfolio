@@ -1,18 +1,18 @@
 .header {
-  margin-top: 15rem;
-  height: 100vh;
+  margin-top: 10rem;
+  /* height: 100vh; */
 }
 
 .intro-name {
   font-size: 5rem;
   line-height: 1em;
-  width: 100%;
+  max-width: 100%;
 }
 
 .work-position {
   color: var(--color-2);
   margin-top: -0.3rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .links {
