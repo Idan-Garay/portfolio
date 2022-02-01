@@ -14,3 +14,8 @@
   margin-top: -0.3rem;
   font-size: 1.5rem;
 }
+
+.links {
+  width: 5em;
+  display: flex;
+}

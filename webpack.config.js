@@ -17,6 +17,7 @@ const config = {
   devServer: {
     open: true,
     host: "localhost",
+    inline: false,
   },
   plugins: [
     new HtmlWebpackPlugin({ template: "./src/index.html" }),
@@ -47,7 +48,6 @@ const config = {
 module.exports = () => {
   if (isProduction) {
     config.mode = "production";
-
     config.plugins.push(new WorkboxWebpackPlugin.GenerateSW());
   } else {
     config.mode = "development";

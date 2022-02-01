@@ -24,7 +24,7 @@
   font-size: 1rem;
 }
 
-.input-group input,
+.input-group input:not(.input-group input[type="submit"]),
 .input-group textarea {
   color: var(--color-subtext);
   font-size: 1em;
@@ -37,6 +37,11 @@
   width: 100%;
 }
 
+.input-group textarea {
+  resize: none;
+  overflow-y: hidden;
+}
+
 .submit-cont {
   display: flex;
   flex-direction: column;
@@ -44,11 +49,12 @@
   align-items: center;
 }
 
-.submit-cont button {
+.submit-cont input[type="submit"] {
   color: var(--color-3);
   border: 1px solid var(--color-3);
   border-radius: 5px;
   font-size: 1rem;
   padding: 5px;
   background-color: transparent;
+  width: auto;
 }

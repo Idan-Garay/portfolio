@@ -1,4 +1,5 @@
 import React from "react";
+import Links from "../../Links";
 import "./Header.css";
 
 const Header = () => {
@@ -6,6 +7,7 @@ const Header = () => {
     <div className="header">
       <h1 className="intro-name">Idan Joshua</h1>
       <h4 className="work-position">Front-end Developer</h4>
+      <Links color={"white"} size={"2em"} />
     </div>
   );
 };

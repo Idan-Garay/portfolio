@@ -41,13 +41,3 @@
   width: 60%;
   justify-content: left;
 }
-
-.platform:hover {
-  color: var(--color-2);
-  cursor: pointer;
-}
-
-a {
-  text-decoration: none;
-  color: var(--color-subtext);
-}
