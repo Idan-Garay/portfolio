@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* height: 100vh; */
+  height: 100vh;
 }
 
 .email-form {
@@ -21,13 +21,13 @@
 
 .input-group label {
   color: var(--color-2);
-  font-size: 1rem;
+  font-size: var(--size-subtext);
 }
 
 .input-group input:not(.input-group input[type="submit"]),
 .input-group textarea {
   color: var(--color-subtext);
-  font-size: 1em;
+  font-size: var(--size-subtext);
   background-color: var(--color-1);
   border: 0px;
   border-bottom: 1px solid var(--color-subtext);
@@ -38,8 +38,9 @@
 }
 
 .input-group textarea {
-  resize: none;
+  resize: vertical;
   overflow-y: hidden;
+  padding: 1rem 0;
 }
 
 .submit-cont {
