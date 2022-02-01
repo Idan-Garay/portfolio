@@ -1,3 +1,7 @@
+.about {
+  height: 100vh;
+}
+
 .section-title {
   color: var(--color-3);
   margin-top: 3em;

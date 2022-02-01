@@ -16,9 +16,9 @@ const Work = ({ title, desc, skillSet, links }) => {
           ))}
         </div>
         <div className="bottom-display-container">
-          {/* <a href={links[0]}> */}
-          <VscGithubInverted size={30} className="platform" />
-          {/* </a> */}
+          <a href={links[0]}>
+            <VscGithubInverted size={30} className="platform" />
+          </a>
           <a href={links[1]}>
             <VscLiveShare size={30} className="platform" />
           </a>
