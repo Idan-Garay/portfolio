@@ -1,0 +1,47 @@
+.icon {
+    margin: 15px;
+}
+
+.nav {
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    height: 100vh;
+    text-align: right;
+}
+
+.navMinimize {
+    height: 20%;
+    width: 100%;
+    text-align: right;
+}
+
+.nav ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+    margin-left: 44px;
+    list-style-type: none;
+    text-align: left;
+}
+
+.nav h1 {
+    font-size: 36px;
+    color: black;
+    cursor: pointer;
+    text-shadow:
+        /* 3px  3px 0 white, */
+        -1px -1px 0 white,  
+        1px -1px 0 white,
+        -1px  1px 0 white,
+        1px  1px 0 white;
+}
+
+.nav h1:hover {
+    color: white;
+    text-shadow: none;
+}
