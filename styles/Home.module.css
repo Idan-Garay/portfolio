@@ -3,9 +3,13 @@
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  align-items: start;
   height: 100vh;
+}
+
+.leftMargin {
+  margin-left: 20%;
 }
 
 .main {
@@ -13,8 +17,9 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  align-items: start;
+  height: 100%;
 }
 
 .footer {

@@ -4,7 +4,7 @@ import { FaTimes } from 'react-icons/Fa';
 import { useState } from 'react';
 
 export default function Navbar() {
-    const [toggleNav, setToggleNav] = useState(true);
+    const [toggleNav, setToggleNav] = useState(false);
     const changeToggle = () => { setToggleNav(!toggleNav) };
 
     return <>

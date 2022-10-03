@@ -2,6 +2,9 @@ import Head from "next/head";
 import React from "react";
 import styles from "../styles/Home.module.css";
 import nextPackage from "next/package.json";
+import Hero from "components/hero/hero";
+import Myself from "components/myself/myself";
+import Projects from "components/projects/projects";
 
 export default function Home({}) {
   return (
@@ -13,7 +16,11 @@ export default function Home({}) {
       </Head>
 
       <main className={styles.main}>
-        
+        <div className={`left-margin ${styles.leftMargin}`}>
+          <Hero/>
+          <Myself/>
+          <Projects />
+        </div>
       </main>
     </div>
   );
