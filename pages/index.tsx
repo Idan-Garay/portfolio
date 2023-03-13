@@ -34,6 +34,20 @@ export default function Home() {
           </div>
         </header>
 
+        <div className="w-full h-[91.8vh] pb-[10vw] flex items-center justify-center gap-x-40 md:px-[10vw]">
+            <div className="text_content -mt-10 cursor-default">
+              <h3 className="text-xl font-bold text-black text-opacity-70 dark:text-white dark:text-opacity-70">Hi,</h3>
+              <h1 className="text-5xl font-bold">I’M IDAN JOSHUA</h1>
+              <h2 className="-mt-2 text-3xl font-bold text-black text-opacity-50 dark:text-white dark:text-opacity-50">FRONTEND DEVELOPER</h2>
+              <div className="active:cursor-pointer mt-3 text_buttons flex gap-x-2 text-bas font-semibold tracking-wide">
+                <button className="hover:bg-dark-highlight hover:border-dark-highlight border-[3px] border-highlight py-2 px-3 rounded-full text-white bg-highlight">PROJECTS</button>
+                <button className="hover:border-[3px] border-2 py-2 px-3 rounded-full text-highlight border-highlight">CONNECT</button>
+              </div>
+            </div>
+
+            <div className="self-center min-h-[400px] w-[400px] border bg-gray-500"></div>
+        </div>
+
       </main>
 
       <footer className="">
