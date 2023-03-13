@@ -13,7 +13,7 @@ export default function Home() {
         <link rel="icon" href="/icon.png" />
       </Head>
 
-      <main className="min-h-[100vh] h-full w-full ">
+      <main className=" min-h-[100vh] h-full w-full dark:bg-black">
         <header className='w-full border flex justify-center pt-[15px] px-[15%]'>
           <nav className="mx-auto flex justify-center gap-x-8 md:gap-x-14 items-center min-w-[280px] md:min-w-[400px] min-h-[50px] h-[50px] border w-[400px] rounded-full text-sm font-semibold uppercase text-gray-700">
             <Link className='' href={"/"}>Projects </Link>
