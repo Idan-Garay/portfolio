@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import {BsLinkedin, BsGithub, BsSun, BsMoon}  from 'react-icons/bs'
-import {useTheme} from 'next-themes'
+import { BsLinkedin, BsGithub, BsSun, BsMoon } from 'react-icons/bs'
+import { useTheme } from 'next-themes'
 
 export default function Home() {
-  const {theme, setTheme} = useTheme()
+  const { theme, setTheme } = useTheme()
 
   return (
     <div>
@@ -22,30 +22,55 @@ export default function Home() {
             <Link className='hover:text-highlight' href={"/"}>Contact</Link>
           </nav>
           <div className="nav-tools absolute flex self-center  right-5 sm:right-10 md:right-30 lg:right-40 md:gap-x-3 ">
-            <Link className='hover:text-highlight hidden md:block' href={'/'}><BsGithub size={25}/></Link>
-            <Link className='hover:text-highlight hidden md:block mr-3' href={'/'}><BsLinkedin size={25}/></Link>
-            <div className="hover:text-highlight hover:cursor-pointer rounded-full h-[28x] w-[28px]" onClick={() => theme === 'dark'? setTheme('light'):  setTheme('dark')}>
+            <Link className='hover:text-highlight hidden md:block' href={'/'}><BsGithub size={25} /></Link>
+            <Link className='hover:text-highlight hidden md:block mr-3' href={'/'}><BsLinkedin size={25} /></Link>
+            <div className="hover:text-highlight hover:cursor-pointer rounded-full h-[28x] w-[28px]" onClick={() => theme === 'dark' ? setTheme('light') : setTheme('dark')}>
               {
                 theme === 'dark'
-                ? <BsMoon size={25} className='m-auto' />
-                :<BsSun size={25} className='m-auto' />
+                  ? <BsMoon size={25} className='m-auto' />
+                  : <BsSun size={25} className='m-auto' />
               }
             </div>
           </div>
         </header>
 
         <div className="w-full h-[91.8vh] pb-[10vw] flex items-center justify-center gap-x-40 px-[10vw]">
-            <div className="text_content -mt-10 cursor-default">
-              <h3 className="text-xl font-bold text-black text-opacity-70 dark:text-white dark:text-opacity-70">Hi,</h3>
-              <h1 className="text-5xl font-bold">I’M IDAN JOSHUA</h1>
-              <h2 className="-mt-2 text-3xl font-bold text-black text-opacity-50 dark:text-white dark:text-opacity-50">FRONTEND DEVELOPER</h2>
-              <div className="active:cursor-pointer mt-3 text_buttons flex gap-x-2 text-bas font-semibold tracking-wide">
-                <button className="hover:bg-dark-highlight hover:border-dark-highlight border-[3px] border-highlight py-2 px-3 rounded-full text-white bg-highlight">PROJECTS</button>
-                <button className="hover:border-[3px] border-2 py-2 px-3 rounded-full text-highlight border-highlight">CONNECT</button>
-              </div>
+          <div className="text_content -mt-10 cursor-default">
+            <h3 className="text-xl font-bold text-black text-opacity-70 dark:text-white dark:text-opacity-70">Hi,</h3>
+            <h1 className="text-5xl font-bold">I’M IDAN JOSHUA</h1>
+            <h2 className="-mt-2 text-3xl font-bold text-black text-opacity-50 dark:text-white dark:text-opacity-50">FRONTEND DEVELOPER</h2>
+            <div className="active:cursor-pointer mt-3 text_buttons flex gap-x-2 text-bas font-semibold tracking-wide">
+              <button className="hover:bg-dark-highlight hover:border-dark-highlight border-[3px] border-highlight py-2 px-3 rounded-full text-white bg-highlight">PROJECTS</button>
+              <button className="hover:border-[3px] border-2 py-2 px-3 rounded-full text-highlight border-highlight">CONNECT</button>
             </div>
+          </div>
 
-            <div className="self-center hidden md:block min-h-[400px] w-[400px] border bg-gray-500"></div>
+          <div className="self-center hidden md:block min-h-[400px] w-[400px] border bg-gray-500"></div>
+        </div>
+
+        <div className="w-full h-[100vh] bg-secondary flex px-[10vw] flex-col gap-y-6 items-center justify-center ">
+          <div className="content w-full flex justify-center gap-x-24 h-[60%] -mt-[5vh]">
+            <div className="showcase w-full border h-full"></div>
+            <div className="text_content w-full h-full">
+              {/* <h3 className="text-xl font-bold text-black text-opacity-70 dark:text-white dark:text-opacity-70">Hi,</h3> */}
+              <h1 className="text-3xl font-bold">HandyHome Website</h1>
+              <h3 className="text-lg w-3/4 mt-3">A customized landing page that I designed and developed for one of my undergraduate coursework assignments.</h3>
+              {/* <h2 className="-mt-2 text-3xl font-bold text-black text-opacity-50 dark:text-white dark:text-opacity-50">FRONTEND DEVELOPER</h2> */}
+              <ul className="technologies mt-6 flex gap-x-3 flex-wrap">
+                <li className='text-xl font-bold text-black text-opacity-70 dark:text-white dark:text-opacity-70'>REACT</li>
+                <li className='text-xl font-bold text-black text-opacity-70 dark:text-white dark:text-opacity-70'>NEXTJS</li>
+                <li className='text-xl font-bold text-black text-opacity-70 dark:text-white dark:text-opacity-70'>TAILWIND</li>
+                <li className='text-xl font-bold text-black text-opacity-70 dark:text-white dark:text-opacity-70'>TYPESCRIPT</li>
+                <li className='text-xl font-bold text-black text-opacity-70 dark:text-white dark:text-opacity-70'>AWS</li>
+              </ul>
+            </div>
+          </div>
+
+          <ul className="bullets hover:cursor-pointer flex gap-x-[3px] items-center">
+            <li className="h-3 w-3 rounded-full bg-highlight"></li>
+            <li className="h-2 w-2 rounded-full bg-highlight bg-opacity-70"></li>
+          </ul>
+
         </div>
 
       </main>
