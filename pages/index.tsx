@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 import { BsLinkedin, BsGithub, BsSun, BsMoon } from 'react-icons/bs'
 import { useTheme } from 'next-themes'
 
@@ -48,9 +49,14 @@ export default function Home() {
           <div className="self-center hidden md:block min-h-[400px] w-[400px] border bg-gray-500"></div>
         </div>
 
-        <div className="w-full h-[100vh] bg-secondary flex px-[10vw] flex-col gap-y-6 items-center justify-center ">
-          <div className="content w-full flex justify-center gap-x-24 h-[60%] -mt-[5vh]">
-            <div className="showcase w-full border h-full"></div>
+        <div className="w-full h-[100vh] bg-secondary flex px-[10vw] flex-col  gap-y-6 items-center justify-center ">
+          <div className=" content w-full flex flex-col-reverse md:flex-row justify-center gap-x-24 h-[70%] sm:h-[80%] md:h-[45%] lg:h-[60%] -mt-[5vh]">
+            <div className="showcase w-full self-start  ">
+              <Link href="https://nextjs-typescript.d3k5bbpd7nkhfg.amplifyapp.com/" target="_blank">
+                <Image src="/handyhome.png" alt="handyhome_preview" width={780} height={1024} />
+              </Link>
+            </div>
+
             <div className="text_content w-full h-full">
               {/* <h3 className="text-xl font-bold text-black text-opacity-70 dark:text-white dark:text-opacity-70">Hi,</h3> */}
               <h1 className="text-3xl font-bold">HandyHome Website</h1>
