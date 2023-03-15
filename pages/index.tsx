@@ -121,7 +121,7 @@ export default function Home() {
       </main>
 
       <footer className="h-[10vh] px-[10vw] flex justify-between items-center border-t-[1px]">
-        <p className=' hidden md:block text-slate-800 text-xl before:pr-3 before:content-["_↑"]'>Back To Top</p>
+        <p className=' hidden md:block dark:text-slate-200 text-slate-800 text-xl before:pr-3 before:content-["_↑"]'>Back To Top</p>
         <p className=' text-gray-500'>© Idan Joshua Garay. All rights reserved.</p>
       </footer>
     </div>
