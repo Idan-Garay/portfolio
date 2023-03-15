@@ -34,7 +34,7 @@ export default function Home() {
           </div>
         </header>
 
-        <div className="w-full h-[91.8vh] pb-[10vw] flex items-center justify-center gap-x-40 md:px-[10vw]">
+        <div className="w-full h-[91.8vh] pb-[10vw] flex items-center justify-center gap-x-40 px-[10vw]">
             <div className="text_content -mt-10 cursor-default">
               <h3 className="text-xl font-bold text-black text-opacity-70 dark:text-white dark:text-opacity-70">Hi,</h3>
               <h1 className="text-5xl font-bold">I’M IDAN JOSHUA</h1>
@@ -45,7 +45,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="self-center min-h-[400px] w-[400px] border bg-gray-500"></div>
+            <div className="self-center hidden md:block min-h-[400px] w-[400px] border bg-gray-500"></div>
         </div>
 
       </main>
