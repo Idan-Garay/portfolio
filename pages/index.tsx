@@ -51,7 +51,7 @@ export default function Home() {
           <div className="self-center hidden md:block min-h-[400px] w-[400px] border bg-gray-500"></div>
         </div>
 
-        <div className="w-full h-[100vh] bg-secondary flex px-[10vw] flex-col  gap-y-6 items-center justify-center ">
+        <div className="w-full h-[100vh] bg-secondary dark:bg-black flex px-[10vw] flex-col  gap-y-6 items-center justify-center ">
           <div className="group content w-full flex flex-col-reverse md:flex-row justify-center gap-x-24 h-[75%] sm:h-[80%] md:h-[45%] lg:h-[60%] -mt-[5vh]">
             <div className="showcase w-full self-start">
               <Link className='flex flex-col items-end gap-y-3' href="https://nextjs-typescript.d3k5bbpd7nkhfg.amplifyapp.com/" target="_blank">
@@ -107,6 +107,15 @@ export default function Home() {
               <BsEnvelopeAt className='m-auto text-highlight duration-500 group-hover:text-white w-full h-full' size={300} />
             </div>
             <h3 className="ml-16 sm:ml-32 md:ml-0 text-xl underline text-highlight font-medium text-opacity-70 duration-500 group-hover:text-opacity-100">Download Resume</h3>
+          </div>
+        </div>
+
+        <div className="h-[100vh] border bg-secondary dark:bg-black flex flex-col justify-center items-center">
+          <h3 className="text-5xl font-medium text-black text-opacity-70 dark:text-white dark:text-opacity-70">Let's Connect!</h3>
+          <h1 className="text-xl font-bold underline">garayidan@gmail.com</h1>
+          <div className="links flex gap-x-3 mt-3">
+            <Link className='hover:text-highlight' href={'/'}><BsGithub size={35} /></Link>
+            <Link className='hover:text-highlight mr-3' href={'/'}><BsLinkedin size={35} /></Link>
           </div>
         </div>
       </main>
