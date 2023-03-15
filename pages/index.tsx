@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
-import { BsLinkedin, BsGithub, BsSun, BsMoon } from 'react-icons/bs'
+import { BsLinkedin, BsGithub, BsSun, BsMoon, BsArrowDownShort } from 'react-icons/bs'
 import { useTheme } from 'next-themes'
 
 export default function Home() {
@@ -50,10 +50,11 @@ export default function Home() {
         </div>
 
         <div className="w-full h-[100vh] bg-secondary flex px-[10vw] flex-col  gap-y-6 items-center justify-center ">
-          <div className=" content w-full flex flex-col-reverse md:flex-row justify-center gap-x-24 h-[70%] sm:h-[80%] md:h-[45%] lg:h-[60%] -mt-[5vh]">
-            <div className="showcase w-full self-start  ">
-              <Link href="https://nextjs-typescript.d3k5bbpd7nkhfg.amplifyapp.com/" target="_blank">
-                <Image src="/handyhome.png" alt="handyhome_preview" width={780} height={1024} />
+          <div className="group content w-full flex flex-col-reverse md:flex-row justify-center gap-x-24 h-[70%] sm:h-[80%] md:h-[45%] lg:h-[60%] -mt-[5vh]">
+            <div className="showcase w-full self-start">
+              <Link className='flex flex-col items-end gap-y-3' href="https://nextjs-typescript.d3k5bbpd7nkhfg.amplifyapp.com/" target="_blank">
+                <Image src="/handyhome.png" className=' duration-500 group-hover:outline group-hover:outline-offset-2 group-hover:outline-highlight group-hover:rounded-md' alt="handyhome_preview" width={780} height={1024} />
+                <BsArrowDownShort size={40} className='border border-slate-400 rounded-full -rotate-45 group-hover:-rotate-90 group-hover:border group-hover:rounded-full group-hover:bg-highlight group-hover:text-white duration-500  '/>
               </Link>
             </div>
 
