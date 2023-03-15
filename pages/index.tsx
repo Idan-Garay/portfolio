@@ -110,7 +110,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="h-[100vh] border bg-secondary dark:bg-black flex flex-col justify-center items-center">
+        <div className="h-[100vh] bg-secondary dark:bg-black flex flex-col justify-center items-center">
           <h3 className="text-5xl font-medium text-black text-opacity-70 dark:text-white dark:text-opacity-70">Let's Connect!</h3>
           <h1 className="text-xl font-bold underline">garayidan@gmail.com</h1>
           <div className="links flex gap-x-3 mt-3">
@@ -120,7 +120,9 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="">
+      <footer className="h-[10vh] px-[10vw] flex justify-between items-center border-t-[1px]">
+        <p className=' hidden md:block text-slate-800 text-xl before:pr-3 before:content-["_↑"]'>Back To Top</p>
+        <p className=' text-gray-500'>© Idan Joshua Garay. All rights reserved.</p>
       </footer>
     </div>
   )
