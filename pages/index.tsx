@@ -144,7 +144,7 @@ export default function Home() {
         </div>
 
         <div id="letsconnect" className="h-[100vh] bg-secondary dark:bg-black flex flex-col justify-center items-center">
-          <h3 className="text-5xl font-medium text-black text-opacity-70 dark:text-white dark:text-opacity-70">Let's Connect!</h3>
+          <h3 className="text-5xl font-medium text-black text-opacity-70 dark:text-white dark:text-opacity-70">Let&apos;s Connect!</h3>
           <h1 className="text-xl font-bold underline">garayidan@gmail.com</h1>
           <div className="links flex gap-x-3 mt-3">
             <Link target="_blank" className='hover:text-highlight' href={'https://github.com/Idan-Garay'}><BsGithub size={35} /></Link>
