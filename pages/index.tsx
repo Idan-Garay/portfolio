@@ -3,11 +3,24 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { BsLinkedin, BsGithub, BsSun, BsMoon, BsArrowDownShort, BsEnvelopeAt } from 'react-icons/bs'
 import { useTheme } from 'next-themes'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
+import useDownloader from "react-use-downloader";
 
 export default function Home() {
   const { theme, setTheme } = useTheme()
   const [toggleToast, setToggleToast] = useState(false)
+  const [downloadToast, setDownloadToast] = useState(false)
+  const delayToggle = (seconds: number) => {
+    setTimeout(() => {
+      setToggleToast(false)
+      setDownloadToast(false)
+    }, seconds*1000)
+  }
+  const linkRef = useRef(null)
+  const { size, elapsed, percentage, download,
+    cancel, error, isInProgress } =
+    useDownloader();
+  const [fileUrl, fileName] = ["/resume.pdf", "resume.pdf"];
 
   return (
     <div>
@@ -75,7 +88,7 @@ export default function Home() {
             </div>
           </div>
 
-          <ul onClick={e => { setToggleToast(true) }} className="bullets hover:cursor-pointer flex gap-x-[3px] items-center">
+          <ul onClick={e => { setToggleToast(true); delayToggle(3) }} className="bullets hover:cursor-pointer flex gap-x-[3px] items-center">
             <li className="h-3 w-3 rounded-full bg-highlight"></li>
             <li className="h-2 w-2 rounded-full bg-highlight bg-opacity-70"></li>
           </ul>
@@ -102,12 +115,25 @@ export default function Home() {
             <p className="text-lg w-3/4 mt-3">My goal is to be a principal software engineer in my career with a specific goal of becoming a senior software engineer in 2 years</p>
           </div>
 
-          <div className="cv h-[20%] md:h-[40%] w-full md:-mt-[10vh] flex flex-col md:items-center group hover:cursor-pointer">
+          <div onClick={() => { setDownloadToast(true); download(fileUrl, fileName);  delayToggle(3) }}  className="cv h-[20%] md:h-[40%] w-full md:-mt-[10vh] flex flex-col md:items-center group hover:cursor-pointer">
             <div className="cv_content border-4 pb-3 border-highlight duration-500 group-hover:bg-highlight rounded-md w-3/4 h-full md:h-[50%] lg:h-full">
               <BsEnvelopeAt className='m-auto text-highlight duration-500 group-hover:text-white w-full h-full' size={300} />
             </div>
-            <h3 className="ml-16 sm:ml-32 md:ml-0 text-xl underline text-highlight font-medium text-opacity-70 duration-500 group-hover:text-opacity-100">Download Resume</h3>
+            <h3 className="hover:cursor-pointer ml-16 sm:ml-32 md:ml-0 text-xl underline text-highlight font-medium text-opacity-70 duration-500 group-hover:text-opacity-100">Download Resume</h3>
           </div>
+
+          <div id="toast-default" className={`${downloadToast ? '' : 'hidden'} animate-slideLeft fixed top-3 right-3 flex items-center w-full max-w-xs p-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800`} role="alert">
+            <div className="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-blue-500 bg-blue-100 rounded-lg dark:bg-blue-800 dark:text-blue-200">
+              <svg aria-hidden="true" className="w-5 h-5" fill="green" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd"></path></svg>
+              <span className="sr-only">Warning icon</span>
+            </div>
+            <div className="ml-3 text-sm font-normal ">Resume downloaded</div>
+            <button type="button" onClick={e => { setDownloadToast(false);  }} className="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700" data-dismiss-target="#toast-default" aria-label="Close">
+              <span className="sr-only" >Close</span>
+              <svg aria-hidden="true" className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
+            </button>
+          </div>
+
         </div>
 
         <div className="h-[100vh] bg-secondary dark:bg-black flex flex-col justify-center items-center">
