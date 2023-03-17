@@ -5,6 +5,7 @@ import { BsLinkedin, BsGithub, BsSun, BsMoon, BsArrowDownShort, BsEnvelopeAt } f
 import { useTheme } from 'next-themes'
 import { useRef, useState } from 'react'
 import useDownloader from "react-use-downloader";
+import { scroller } from "react-scroll";
 
 export default function Home() {
   const { theme, setTheme } = useTheme()
@@ -14,13 +15,19 @@ export default function Home() {
     setTimeout(() => {
       setToggleToast(false)
       setDownloadToast(false)
-    }, seconds*1000)
+    }, seconds * 1000)
   }
-  const linkRef = useRef(null)
   const { size, elapsed, percentage, download,
     cancel, error, isInProgress } =
     useDownloader();
   const [fileUrl, fileName] = ["/resume.pdf", "resume.pdf"];
+
+  const onScrollTo = (to: string) => {
+    scroller.scrollTo(to, {
+      duration: 500,
+      delay: 0,
+    })
+  }
 
   return (
     <div>
@@ -31,11 +38,11 @@ export default function Home() {
       </Head>
 
       <main className=" min-h-[100vh] h-full w-full dark:bg-black">
-        <header className='w-full relative flex justify-center pt-[15px] px-[15%]'>
-          <nav className="mx-auto flex justify-center gap-x-8 md:gap-x-14 items-center min-w-[280px] md:min-w-[400px] min-h-[50px] h-[50px] border w-[400px] rounded-full text-sm font-semibold uppercase text-gray-700 dark:text-white dark:text-opacity-90">
-            <Link className=' hover:text-highlight' href={"/"}>Projects </Link>
-            <Link className='hover:text-highlight' href={"/"}>About</Link>
-            <Link className='hover:text-highlight' href={"/"}>Contact</Link>
+        <header id="top" className='w-full relative flex justify-center pt-[15px] px-[15%]'>
+          <nav className="list-none mx-auto flex justify-center gap-x-8 md:gap-x-14 items-center min-w-[280px] md:min-w-[400px] min-h-[50px] h-[50px] border w-[400px] rounded-full text-sm font-semibold uppercase text-gray-700 dark:text-white dark:text-opacity-90">
+            <li onClick={() => onScrollTo("projects")} className='no hover:text-highlight hover:cursor-pointer'>Projects</li>
+            <li onClick={() => onScrollTo("about")} className=' hover:text-highlight hover:cursor-pointer'>About</li>
+            <li onClick={() => onScrollTo("letsconnect")} className=' hover:text-highlight hover:cursor-pointer'>Contact</li>
           </nav>
           <div className="nav-tools absolute flex self-center  right-5 sm:right-10 md:right-30 lg:right-40 md:gap-x-3 ">
             <Link target="_blank" className='hover:text-highlight hidden md:block' href={'https://github.com/Idan-Garay'}><BsGithub size={25} /></Link>
@@ -56,15 +63,15 @@ export default function Home() {
             <h1 className="text-5xl font-bold">I’M IDAN JOSHUA</h1>
             <h2 className="-mt-2 text-3xl font-bold text-black text-opacity-50 dark:text-white dark:text-opacity-50">FRONTEND DEVELOPER</h2>
             <div className="active:cursor-pointer mt-3 text_buttons flex gap-x-2 text-bas font-semibold tracking-wide">
-              <button className="hover:bg-dark-highlight hover:border-dark-highlight border-[3px] border-highlight py-2 px-3 rounded-full text-white bg-highlight">PROJECTS</button>
-              <button className="hover:border-[3px] border-2 py-2 px-3 rounded-full text-highlight border-highlight">CONNECT</button>
+              <button onClick={() => onScrollTo("projects")} className="hover:bg-dark-highlight hover:border-dark-highlight border-[3px] border-highlight py-2 px-3 rounded-full text-white bg-highlight">PROJECTS</button>
+              <button onClick={() => onScrollTo("letsconnect")} className="hover:border-[3px] border-2 py-2 px-3 rounded-full text-highlight border-highlight">CONNECT</button>
             </div>
           </div>
 
           <div className="self-center hidden md:block min-h-[400px] w-[400px]"></div>
         </div>
 
-        <div className="w-full h-[100vh] bg-secondary dark:bg-black flex px-[10vw] flex-col  gap-y-6 items-center justify-center ">
+        <div id="projects" className="w-full h-[100vh] bg-secondary dark:bg-black flex px-[10vw] flex-col  gap-y-6 items-center justify-center ">
           <div className="group content w-full flex flex-col-reverse md:flex-row justify-center gap-x-24 h-[75%] sm:h-[80%] md:h-[45%] lg:h-[60%] -mt-[5vh]">
             <div className="showcase w-full self-start">
               <Link className='flex flex-col items-end gap-y-3' href="https://nextjs-typescript.d3k5bbpd7nkhfg.amplifyapp.com/" target="_blank">
@@ -107,7 +114,7 @@ export default function Home() {
           </button>
         </div>
 
-        <div className="full px-[10vw] h-[100vh] flex flex-col gap-y-6 md:gap-y-0 md:flex-row justify-center md:items-center">
+        <div id="about" className="full px-[10vw] h-[100vh] flex flex-col gap-y-6 md:gap-y-0 md:flex-row justify-center md:items-center">
           <div className="content md:-mt-[10vh]">
             <h1 className="text-3xl font-bold">ABOUT ME</h1>
             <p className="text-lg w-3/4 mt-3">A front-end developer with almost a year of experience with website and mobile development. I like to make things simple and concise in expressing my work.</p>
@@ -115,7 +122,7 @@ export default function Home() {
             <p className="text-lg w-3/4 mt-3">My goal is to be a principal software engineer in my career with a specific goal of becoming a senior software engineer in 2 years</p>
           </div>
 
-          <div onClick={() => { setDownloadToast(true); download(fileUrl, fileName);  delayToggle(3) }}  className="cv h-[20%] md:h-[40%] w-full md:-mt-[10vh] flex flex-col md:items-center group hover:cursor-pointer">
+          <div onClick={() => { setDownloadToast(true); download(fileUrl, fileName); delayToggle(3) }} className="cv h-[20%] md:h-[40%] w-full md:-mt-[10vh] flex flex-col md:items-center group hover:cursor-pointer">
             <div className="cv_content border-4 pb-3 border-highlight duration-500 group-hover:bg-highlight rounded-md w-3/4 h-full md:h-[50%] lg:h-full">
               <BsEnvelopeAt className='m-auto text-highlight duration-500 group-hover:text-white w-full h-full' size={300} />
             </div>
@@ -128,7 +135,7 @@ export default function Home() {
               <span className="sr-only">Warning icon</span>
             </div>
             <div className="ml-3 text-sm font-normal ">Resume downloaded</div>
-            <button type="button" onClick={e => { setDownloadToast(false);  }} className="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700" data-dismiss-target="#toast-default" aria-label="Close">
+            <button type="button" onClick={e => { setDownloadToast(false); }} className="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700" data-dismiss-target="#toast-default" aria-label="Close">
               <span className="sr-only" >Close</span>
               <svg aria-hidden="true" className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
             </button>
@@ -136,7 +143,7 @@ export default function Home() {
 
         </div>
 
-        <div className="h-[100vh] bg-secondary dark:bg-black flex flex-col justify-center items-center">
+        <div id="letsconnect" className="h-[100vh] bg-secondary dark:bg-black flex flex-col justify-center items-center">
           <h3 className="text-5xl font-medium text-black text-opacity-70 dark:text-white dark:text-opacity-70">Let's Connect!</h3>
           <h1 className="text-xl font-bold underline">garayidan@gmail.com</h1>
           <div className="links flex gap-x-3 mt-3">
@@ -147,7 +154,12 @@ export default function Home() {
       </main>
 
       <footer className="h-[10vh] px-[10vw] flex justify-between items-center border-t-[1px]">
-        <p className=' hidden md:block dark:text-slate-200 text-slate-800 text-xl before:pr-3 before:content-["_↑"]'>Back To Top</p>
+        <p onClick={() => {
+          scroller.scrollTo('top', {
+            duration: 500,
+            delay: 0,
+          })
+        }} className='hover:cursor-pointer hidden md:block dark:text-slate-200 text-slate-800 text-xl before:pr-3 before:content-["_↑"]'>Back To Top</p>
         <p className=' text-gray-500'>© Idan Joshua Garay. All rights reserved.</p>
       </footer>
     </div>
