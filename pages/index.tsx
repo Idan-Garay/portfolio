@@ -119,7 +119,7 @@ export default function Home() {
             <h1 className="text-3xl font-bold">ABOUT ME</h1>
             <p className="text-lg w-3/4 mt-3">A front-end developer with almost a year of experience with website and mobile development. I like to make things simple and concise in expressing my work.</p>
             <p className="text-lg w-3/4 mt-3">As a computer science undergrad, I am knowledgeable in fundamentals of programming, data structures, and Object-Oriented Programming</p>
-            <p className="text-lg w-3/4 mt-3">My goal is to be a principal software engineer in my career with a specific goal of becoming a senior software engineer in 2 years</p>
+            <p className="text-lg w-3/4 mt-3">My goal is to be a principal software engineer in my career with a specific goal of becoming a senior software engineer in 4 years</p>
           </div>
 
           <div onClick={() => { setDownloadToast(true); download(fileUrl, fileName); delayToggle(3) }} className="cv h-[20%] md:h-[40%] w-full md:-mt-[10vh] flex flex-col md:items-center group hover:cursor-pointer">
