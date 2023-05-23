@@ -117,7 +117,7 @@ export default function Home() {
         <div id="about" className="full px-[10vw] h-[100vh] flex flex-col gap-y-6 md:gap-y-0 md:flex-row justify-center md:items-center">
           <div className="content md:-mt-[10vh]">
             <h1 className="text-3xl font-bold">ABOUT ME</h1>
-            <p className="text-lg w-3/4 mt-3">A front-end developer with almost a year of experience with website and mobile development. I like to make things simple and concise in expressing my work.</p>
+            <p className="text-lg w-3/4 mt-3">A front-end developer with a year of experience with website. I like to make things simple and concise in expressing my work.</p>
             <p className="text-lg w-3/4 mt-3">As a computer science undergrad, I am knowledgeable in fundamentals of programming, data structures, and Object-Oriented Programming</p>
             <p className="text-lg w-3/4 mt-3">My goal is to be a principal software engineer in my career with a specific goal of becoming a senior software engineer in 4 years</p>
           </div>
