@@ -1,7 +1,3 @@
-
-
-import { NextPage } from 'next';
-import { AppProps } from 'next/app';
 import Link from 'next/link'
 import React, { ReactElement, ReactNode, useState } from 'react'
 import { AiOutlineTwitter, AiFillLinkedin, AiFillGithub } from "react-icons/ai"

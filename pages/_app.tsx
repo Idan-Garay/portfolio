@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import { ThemeProvider } from 'next-themes'
-import Layout from '../components/Layout'
+import Layout from '../components/layout'
 import type { ReactElement, ReactNode } from 'react';
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
