@@ -96,7 +96,20 @@ export default function Home() {
             </div>
           </section>
 
+          <section className="posts-section flex flex-col mt-28">
+            <h3 className="tracking-wide uppercase text-xl ">Recent Posts</h3>
+
+            <div className="post flex flex-col mt-6">
+              <h2 className="text-3xl tracking-wide hover:text-blue-500 "><a href="#">Post Title</a></h2>
+              <p className="published-date tracking-wider">April 24, 2023 • 3 mins • Reading</p>
+              <div className="gap h-3"></div>
+              <p className="description tracking-wider">For most of us, we&apos;ve got decades and decades of career left. This gets much less intimidating when you have a sense of how and when to change the work we do. Peter Drecker&apos;s Managing Oneself provides provoking questions on precisely this...</p>
+
+            </div>
+          </section>
+
         </main>
+        
       </div>
     </div>
   )
