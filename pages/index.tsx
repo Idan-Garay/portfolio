@@ -51,76 +51,34 @@ export default function Home() {
         <link rel="icon" href="/logo.png" />
       </Head>
 
-      <div id="outer-container">
-        <aside className={"sm:hidden sm:w-0 absolute z-50 w-full h-full bg-black  text-white text-opacity-80 " + `${open ? "block" : "hidden"}`}>
-          <ul className='flex relative top-24 px-[5%] flex-col gap-y-6 tracking-wider text-3xl font-semibold '>
-            <Link href="/about" className='hover:text-blue-500'>About</Link>
-            <Link href="/blog" className='hover:text-blue-500'>Blog</Link>
-            <Link href="/resume" className='hover:text-blue-500'>Resume</Link>
-          </ul>
 
-          <div className="cursor-pointer flex sm:hidden absolute right-[10%] top-12 h-[20px] w-[30px] " onClick={() => { setOpen(open => !open) }}>
-            <span className={"absolute block h-[12%] rounded-sm w-full left-0 right-0 top-[40%] bg-[#A8ADB1] rotate-45"}></span>
-            <span className={"absolute block h-[12%] rounded-sm w-full left-0 right-0 bg-[#A8ADB1] top-[40%] -rotate-45"} ></span>
+      <section className="introduction flex flex-col sm:flex-row gap-9 items-center mt-14 sm:mt-28">
+        <Image src="/large_logo.png" alt="logo" width={150} height={150} />
+        <div className="flex flex-col gap-9 sm:gap-6">
+          <h2 className="text-3xl text-[#A8ADB1] font-semibold tracking-wide">
+            <Link href="/about" className="text-white hover:text-blue-500 cursor-pointer">Hello, I&apos;m Idan. </Link>
+            A software engineer and a front-end developer.
+          </h2>
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-9 text-lg tracking-wider text-[#A8ADB1]">
+            <Link href="https://twitter.com/GarayIdan" target="_blank" className="group flex gap-1 items-center cursor-pointer text-[#86BFF7] hover:text-[#86BFF7]"><AiOutlineTwitter size={20} /> <span className="group text-[#A8ADB1] group-hover:text-[#86BFF7]">Twitter</span></Link>
+            <Link href="https://www.linkedin.com/in/idan-joshua-garay-1a4657176/" target="_blank" className="group flex gap-1 items-center cursor-pointer text-[#2967BC] hover:text-[#2967BC]"><AiFillLinkedin size={20} /> <span className="group text-[#A8ADB1] group-hover:text-[#2967BC]">LinkedIn</span></Link>
+            <Link href="https://github.com/Idan-Garay" target="_blank" className="group flex gap-1 items-center cursor-pointer text-[#A8ADB1] hover:text-white"><AiFillGithub size={20} /> <span className="group text-[#A8ADB1] group-hover:text-white ">Github</span></Link>
           </div>
-        </aside>
+        </div>
+      </section>
 
-        <main id="page-wrap" className="min-h-screen bg-black px-[10%] md:px-[25%] text-white flex flex-col" >
-          <nav className="pt-12 flex justify-between items-center text-[#A8ADB1]">
-            <h1 className="text-xl font-semibold spacing tracking-widest uppercase hover:text-blue-500">
-              <Link href="/">Idan Joshua</Link>
-              </h1>
-            <ul className=' gap-x-6 text-xl font-light tracking-wider hidden sm:flex'>
-              <Link href="/about" className='hover:text-blue-500'>About</Link>
-              <Link href="/blog" className='hover:text-blue-500'>Blog</Link>
-              <Link href="/resume" className='hover:text-blue-500'>Resume</Link>
-            </ul>
+      <section className="posts-section flex flex-col mt-28">
+        <h3 className="tracking-wide uppercase text-xl ">Recent Posts</h3>
 
-            <div className="cursor-pointer flex sm:hidden relative h-[20px] w-[30px]" onClick={() => { setOpen(open => !open) }}>
-              <span className={"absolute block h-[10%] rounded-sm w-full left-0 right-0 top-[0%] bg-[#A8ADB1] "}></span>
-              <span className={"absolute block h-[10%] rounded-sm w-full left-0 right-0 top-[40%] bg-[#A8ADB1] transition-all "}></span>
-              <span className={"absolute block h-[10%] rounded-sm w-full left-0 right-0 bg-[#A8ADB1] top-[80%]"} ></span>
-            </div>
+        <div className="post flex flex-col mt-6">
+          <h2 className="text-3xl tracking-wide hover:text-blue-500 "><Link href="#">Post Title</Link></h2>
+          <p className="published-date tracking-wider">April 24, 2023 • 3 mins • Reading</p>
+          <div className="gap h-3"></div>
+          <p className="description tracking-wider">For most of us, we&apos;ve got decades and decades of career left. This gets much less intimidating when you have a sense of how and when to change the work we do. Peter Drecker&apos;s Managing Oneself provides provoking questions on precisely this...</p>
 
-          </nav>
+        </div>
+      </section>
 
-          <section className="introduction flex flex-col sm:flex-row gap-9 items-center mt-14 sm:mt-28">
-            <Image src="/large_logo.png" alt="logo" width={150} height={150} />
-            <div className="flex flex-col gap-9 sm:gap-6">
-              <h2 className="text-3xl text-[#A8ADB1] font-semibold tracking-wide">
-                <Link href="/about" className="text-white hover:text-blue-500 cursor-pointer">Hello, I&apos;m Idan. </Link>
-                A software engineer and a front-end developer.
-              </h2>
-              <div className="flex flex-col sm:flex-row gap-6 sm:gap-9 text-lg tracking-wider text-[#A8ADB1]">
-                <Link href="https://twitter.com/GarayIdan" target="_blank" className="group flex gap-1 items-center cursor-pointer text-[#86BFF7] hover:text-[#86BFF7]"><AiOutlineTwitter size={20} /> <span className="group text-[#A8ADB1] group-hover:text-[#86BFF7]">Twitter</span></Link>
-                <Link href="https://www.linkedin.com/in/idan-joshua-garay-1a4657176/" target="_blank" className="group flex gap-1 items-center cursor-pointer text-[#2967BC] hover:text-[#2967BC]"><AiFillLinkedin size={20} /> <span className="group text-[#A8ADB1] group-hover:text-[#2967BC]">LinkedIn</span></Link>
-                <Link href="https://github.com/Idan-Garay" target="_blank" className="group flex gap-1 items-center cursor-pointer text-[#A8ADB1] hover:text-white"><AiFillGithub size={20} /> <span className="group text-[#A8ADB1] group-hover:text-white ">Github</span></Link>
-              </div>
-            </div>
-          </section>
-
-          <section className="posts-section flex flex-col mt-28">
-            <h3 className="tracking-wide uppercase text-xl ">Recent Posts</h3>
-
-            <div className="post flex flex-col mt-6">
-              <h2 className="text-3xl tracking-wide hover:text-blue-500 "><Link href="#">Post Title</Link></h2>
-              <p className="published-date tracking-wider">April 24, 2023 • 3 mins • Reading</p>
-              <div className="gap h-3"></div>
-              <p className="description tracking-wider">For most of us, we&apos;ve got decades and decades of career left. This gets much less intimidating when you have a sense of how and when to change the work we do. Peter Drecker&apos;s Managing Oneself provides provoking questions on precisely this...</p>
-
-            </div>
-          </section>
-
-          <footer className="flex justify-between text-[#A8ADB1] mt-auto py-12">
-            <p>© Idan Joshua Garay</p>
-            <div className="platforms flex gap-6">
-              <Link href="https://twitter.com/GarayIdan" target="_blank" className="flex gap-1 items-center cursor-pointer text-[#A8ADB1] hover:text-[#86BFF7]"><AiOutlineTwitter size={25} /> </Link>
-              <Link href="https://www.linkedin.com/in/idan-joshua-garay-1a4657176/" target="_blank" className="flex gap-1 items-center cursor-pointer text-[#A8ADB1] hover:text-[#2967BC]"><AiFillLinkedin size={25} /> </Link>
-              <Link href="https://github.com/Idan-Garay" target="_blank" className="flex gap-1 items-center cursor-pointer text-[#A8ADB1] hover:text-white"><AiFillGithub size={25} /> </Link>
-            </div>
-          </footer>
-        </main>
-      </div>
-    </div>
+    </div >
   )
 }
