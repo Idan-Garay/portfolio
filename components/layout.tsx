@@ -1,14 +1,37 @@
 import Link from 'next/link'
-import React, { ReactElement, ReactNode, useState } from 'react'
+import React, { ReactNode, useEffect, useState } from 'react'
 import { AiOutlineTwitter, AiFillLinkedin, AiFillGithub } from "react-icons/ai"
+import useDownloader from 'react-use-downloader';
 
 type LayoutProps = {
     children: ReactNode;
 };
 
 
-const Layout: React.FC<LayoutProps> = ({children}) => {
+const Layout: React.FC<LayoutProps> = ({ children }) => {
     const [open, setOpen] = useState(false)
+
+    const { size, elapsed, percentage, download,
+        cancel, error, isInProgress } =
+        useDownloader();
+    const [fileUrl, fileName] = ["/resume.pdf", "resume.pdf"];
+
+    const handleClickResume = () => {
+        download(fileUrl, fileName)
+    }
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= 640) {
+                setOpen(false)
+            }
+        }
+        window.addEventListener("resize", handleResize)
+
+        return () => {
+            window.removeEventListener("resize", handleResize)
+        }
+    }, [])
 
     return (
         <div id="outer-container">
@@ -16,7 +39,7 @@ const Layout: React.FC<LayoutProps> = ({children}) => {
                 <ul className='flex relative top-24 px-[5%] flex-col gap-y-6 tracking-wider text-3xl font-semibold '>
                     <Link href="/about" className='hover:text-blue-500'>About</Link>
                     <Link href="/blog" className='hover:text-blue-500'>Blog</Link>
-                    <Link href="/resume" className='hover:text-blue-500'>Resume</Link>
+                    <li className="hover:text-blue-500 cursor-pointer" onClick={handleClickResume}>Resume</li>
                 </ul>
 
                 <div className="cursor-pointer flex sm:hidden absolute right-[10%] top-12 h-[20px] w-[30px] " onClick={() => { setOpen(open => !open) }}>
@@ -33,7 +56,7 @@ const Layout: React.FC<LayoutProps> = ({children}) => {
                     <ul className=' gap-x-6 text-xl font-light tracking-wider hidden sm:flex'>
                         <Link href="/about" className='hover:text-blue-500'>About</Link>
                         <Link href="/blog" className='hover:text-blue-500'>Blog</Link>
-                        <Link href="/resume" className='hover:text-blue-500'>Resume</Link>
+                        <li className="hover:text-blue-500 cursor-pointer" onClick={handleClickResume}>Resume</li>
                     </ul>
 
                     <div className="cursor-pointer flex sm:hidden relative h-[20px] w-[30px]" onClick={() => { setOpen(open => !open) }}>

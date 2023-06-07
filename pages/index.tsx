@@ -1,48 +1,10 @@
 import Head from 'next/head'
-import { useTheme } from 'next-themes'
-import { useEffect, useState } from 'react'
-import useDownloader from "react-use-downloader";
-import { scroller } from "react-scroll";
 import { AiOutlineTwitter, AiFillLinkedin, AiFillGithub } from "react-icons/ai"
 import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Home() {
-  const { theme, setTheme } = useTheme()
-  const [open, setOpen] = useState(false)
-  const [toggleToast, setToggleToast] = useState(false)
-  const [downloadToast, setDownloadToast] = useState(false)
-  const delayToggle = (seconds: number) => {
-    setTimeout(() => {
-      setToggleToast(false)
-      setDownloadToast(false)
-    }, seconds * 1000)
-  }
-  const { size, elapsed, percentage, download,
-    cancel, error, isInProgress } =
-    useDownloader();
-  const [fileUrl, fileName] = ["/resume.pdf", "resume.pdf"];
-
-  const onScrollTo = (to: string) => {
-    scroller.scrollTo(to, {
-      duration: 500,
-      delay: 0,
-    })
-  }
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 640) {
-        setOpen(false)
-      }
-    }
-    window.addEventListener("resize", handleResize)
-
-    return () => {
-      window.removeEventListener("resize", handleResize)
-    }
-  }, [])
-
+  
   return (
     <div className="bg-black">
       <Head>
