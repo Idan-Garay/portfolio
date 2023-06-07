@@ -54,9 +54,9 @@ export default function Home() {
       <div id="outer-container">
         <aside className={"sm:hidden sm:w-0 absolute z-50 w-full h-full bg-black  text-white text-opacity-80 " + `${open ? "block" : "hidden"}`}>
           <ul className='flex relative top-24 px-[5%] flex-col gap-y-6 tracking-wider text-3xl font-semibold '>
-            <Link href="#" className='hover:text-blue-500'>About</Link>
-            <Link href="#" className='hover:text-blue-500'>Blog</Link>
-            <Link href="#" className='hover:text-blue-500'>Resume</Link>
+            <Link href="/about" className='hover:text-blue-500'>About</Link>
+            <Link href="/blog" className='hover:text-blue-500'>Blog</Link>
+            <Link href="/resume" className='hover:text-blue-500'>Resume</Link>
           </ul>
 
           <div className="cursor-pointer flex sm:hidden absolute right-[10%] top-12 h-[20px] w-[30px] " onClick={() => { setOpen(open => !open) }}>
@@ -71,9 +71,9 @@ export default function Home() {
               <Link href="/">Idan Joshua</Link>
               </h1>
             <ul className=' gap-x-6 text-xl font-light tracking-wider hidden sm:flex'>
-              <Link href="#" className='hover:text-blue-500'>About</Link>
-              <Link href="#" className='hover:text-blue-500'>Blog</Link>
-              <Link href="#" className='hover:text-blue-500'>Resume</Link>
+              <Link href="/about" className='hover:text-blue-500'>About</Link>
+              <Link href="/blog" className='hover:text-blue-500'>Blog</Link>
+              <Link href="/resume" className='hover:text-blue-500'>Resume</Link>
             </ul>
 
             <div className="cursor-pointer flex sm:hidden relative h-[20px] w-[30px]" onClick={() => { setOpen(open => !open) }}>
