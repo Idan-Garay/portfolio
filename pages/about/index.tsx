@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 import React from 'react'
 
 const AboutPage = () => {
@@ -13,11 +14,12 @@ const AboutPage = () => {
                 <p className="text-lg font-light tracking-wider text-[#A8ADB1]">
                     {"Started dabbling with front-end development at 2017 specifically HTML/CSS/JS for curiosity. At present, my main area of concentration revolves around Typescript and React."}
                 </p>
+
                 <p className="text-lg font-light tracking-wider text-[#A8ADB1]">
-                    {"By the year 2019, I’ve started to dive deep in the Javascript Programming Language through coding mini-projects to test my insights from reading the book “You Don’t Know JS Yet” book series until I was able to make full-stack web applications using the MERN stack"}
+                    {"By the year 2019, I’ve started to dive deep in the Javascript Programming Language through coding mini-projects to test my insights from reading the book"}<span className="text-blue-500 hover:bg-blue-500 hover:bg-opacity-50 hover:rounded "> <Link href="https://github.com/getify/You-Dont-Know-JS/" target='_blank'>“You Don’t Know JS Yet” book series</Link></span>  {"until I was able to make full-stack web applications using the MERN stack"}
                 </p>
                 <p className="text-lg font-light tracking-wider text-[#A8ADB1]">
-                    {"Right now, I am focusing in frontend development side project utilizing Storybook.js. This tool allows me to isolate UI components and ensure their responsiveness as I develop them, taking into account the separation of concerns."}
+                    {"Right now, I am focusing in frontend development"} <span className="text-blue-500 hover:bg-blue-500 hover:bg-opacity-50 hover:rounded "> <Link href="https://github.com/Idan-Garay/Lounge.co" target="_blank">side project</Link></span> {"side project utilizing Storybook.js. This tool allows me to isolate UI components and ensure their responsiveness as I develop them, taking into account the separation of concerns."}
                 </p>
 
                 <h3 className="tracking-wide uppercase text-xl font-mono ">Previously</h3>
