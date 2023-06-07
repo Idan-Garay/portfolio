@@ -17,7 +17,7 @@ const BlogPage = () => {
                 <div className="post text-white text-opacity-80">
                     <h2 className="text-3xl tracking-wide hover:text-blue-500 "><Link href="blog/understanding-redux-synchronously">Understanding Redux Synchronously</Link></h2>
                     <div className="gap h-3"></div>
-                    <p className="published-date tracking-wider">February 22, 2022 • 8 mins • Reading</p>
+                    <p className="published-date tracking-wider font-mono">February 26, 2022 • 8 mins • Reading</p>
                 </div>
             </main>
         </div>

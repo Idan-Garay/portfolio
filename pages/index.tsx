@@ -34,7 +34,8 @@ export default function Home() {
 
         <div className="post flex flex-col mt-6">
           <h2 className="text-3xl tracking-wide hover:text-blue-500 "><Link href="blog/understanding-redux-synchronously">Understanding Redux Synchronously</Link></h2>
-          <p className="published-date tracking-wider">February 26, 2022 • 8 mins • Reading</p>
+          <div className="gap h-1"></div>
+          <p className="published-date tracking-wider font-mono">February 26, 2022 • 8 mins • Reading</p>
           <div className="gap h-3"></div>
           <p className="description tracking-wider line-clamp-3">{'Passing data to a component is exhausting especially when the data is needed several components deep. This is called prop drilling, the same data passes through nested components to a specific child component, in between, the components receive the data just to pass it to another child component. It can be very tedious if you have deep nested components.'}</p>
 
