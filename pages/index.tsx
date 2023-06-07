@@ -52,14 +52,14 @@ export default function Home() {
       </Head>
 
       <div id="outer-container">
-        <aside className={"sm:hidden sm:w-0 absolute z-50 w-full h-full  text-white text-opacity-80 " + `${open ? "block" : "hidden"}`}>
+        <aside className={"sm:hidden sm:w-0 absolute z-50 w-full h-full bg-black  text-white text-opacity-80 " + `${open ? "block" : "hidden"}`}>
           <ul className='flex relative top-24 px-[5%] flex-col gap-y-6 tracking-wider text-3xl font-semibold '>
             <Link href="#" className='hover:text-blue-500'>About</Link>
             <Link href="#" className='hover:text-blue-500'>Blog</Link>
             <Link href="#" className='hover:text-blue-500'>Resume</Link>
           </ul>
 
-          <div className=" flex sm:hidden absolute right-[10%] top-12 h-[20px] w-[30px] " onClick={() => { setOpen(open => !open) }}>
+          <div className="cursor-pointer flex sm:hidden absolute right-[10%] top-12 h-[20px] w-[30px] " onClick={() => { setOpen(open => !open) }}>
             <span className={"absolute block h-[12%] rounded-sm w-full left-0 right-0 top-[40%] bg-[#A8ADB1] rotate-45"}></span>
             <span className={"absolute block h-[12%] rounded-sm w-full left-0 right-0 bg-[#A8ADB1] top-[40%] -rotate-45"} ></span>
           </div>
@@ -76,7 +76,7 @@ export default function Home() {
               <Link href="#" className='hover:text-blue-500'>Resume</Link>
             </ul>
 
-            <div className="flex sm:hidden relative h-[20px] w-[30px]" onClick={() => { setOpen(open => !open) }}>
+            <div className="cursor-pointer flex sm:hidden relative h-[20px] w-[30px]" onClick={() => { setOpen(open => !open) }}>
               <span className={"absolute block h-[10%] rounded-sm w-full left-0 right-0 top-[0%] bg-[#A8ADB1] "}></span>
               <span className={"absolute block h-[10%] rounded-sm w-full left-0 right-0 top-[40%] bg-[#A8ADB1] transition-all "}></span>
               <span className={"absolute block h-[10%] rounded-sm w-full left-0 right-0 bg-[#A8ADB1] top-[80%]"} ></span>
