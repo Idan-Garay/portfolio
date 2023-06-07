@@ -89,9 +89,9 @@ export default function Home() {
                 A software engineer and a front-end developer.
               </h2>
               <div className="flex flex-col sm:flex-row gap-6 sm:gap-9 text-lg tracking-wider text-[#A8ADB1]">
-                <a href="https://twitter.com/GarayIdan" target="_blank" className="flex gap-1 items-center cursor-pointer hover:text-white"><AiOutlineTwitter color='#86BFF7' size={20} /> Twitter</a>
-                <a href="https://www.linkedin.com/in/idan-joshua-garay-1a4657176/" target="_blank" className="flex gap-1 items-center cursor-pointer hover:text-white"><AiFillLinkedin color='#2967BC' size={20} /> LinkedIn</a>
-                <a href="https://github.com/Idan-Garay" target="_blank" className="flex gap-1 items-center cursor-pointer hover:text-white"><AiFillGithub color='#D4D4D4' size={20} /> Github</a>
+                <a href="https://twitter.com/GarayIdan" target="_blank" className="group flex gap-1 items-center cursor-pointer text-[#86BFF7] hover:text-[#86BFF7]"><AiOutlineTwitter size={20} /> <span className="group text-[#A8ADB1] group-hover:text-[#86BFF7]">Twitter</span></a>
+                <a href="https://www.linkedin.com/in/idan-joshua-garay-1a4657176/" target="_blank" className="group flex gap-1 items-center cursor-pointer text-[#2967BC] hover:text-[#2967BC]"><AiFillLinkedin size={20} /> <span className="group text-[#A8ADB1] group-hover:text-[#2967BC]">LinkedIn</span></a>
+                <a href="https://github.com/Idan-Garay" target="_blank" className="group flex gap-1 items-center cursor-pointer text-[#A8ADB1] hover:text-white"><AiFillGithub size={20} /> <span className="group text-[#A8ADB1] group-hover:text-white ">Github</span></a>
               </div>
             </div>
           </section>
@@ -113,7 +113,7 @@ export default function Home() {
             <div className="platforms flex gap-6">
               <a href="https://twitter.com/GarayIdan" target="_blank" className="flex gap-1 items-center cursor-pointer text-[#A8ADB1] hover:text-[#86BFF7]"><AiOutlineTwitter size={25} /> </a>
               <a href="https://www.linkedin.com/in/idan-joshua-garay-1a4657176/" target="_blank" className="flex gap-1 items-center cursor-pointer text-[#A8ADB1] hover:text-[#2967BC]"><AiFillLinkedin size={25} /> </a>
-              <a href="https://github.com/Idan-Garay" target="_blank" className="flex gap-1 items-center cursor-pointer text-[#A8ADB1] hover:text-white"><AiFillGithub  size={25} /> </a>
+              <a href="https://github.com/Idan-Garay" target="_blank" className="flex gap-1 items-center cursor-pointer text-[#A8ADB1] hover:text-white"><AiFillGithub size={25} /> </a>
             </div>
           </footer>
         </main>
