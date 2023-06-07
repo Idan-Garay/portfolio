@@ -4,6 +4,10 @@ import React from 'react'
 const BlogPage = () => {
     return (
         <div className="mt-20 ">
+            <Head>
+                <title>Blog | Idan Joshua</title>
+                <link rel="icon" href="/logo.png" />
+            </Head>
             <header>
                 <h1 className="text-5xl text-opacity-80 tracking-wide text-white font-bold">Blog</h1>
                 <div className="h-3"></div>
