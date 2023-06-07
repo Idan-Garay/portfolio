@@ -20,6 +20,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         download(fileUrl, fileName)
     }
 
+    const handleClickLink = () => {setOpen(false) }
+
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth >= 640) {
@@ -37,8 +39,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <div id="outer-container">
             <aside className={"sm:hidden sm:w-0 absolute z-50 w-full h-full bg-black  text-white text-opacity-80 " + `${open ? "block" : "hidden"}`}>
                 <ul className='flex relative top-24 px-[5%] flex-col gap-y-6 tracking-wider text-3xl font-semibold '>
-                    <Link href="/about" className='hover:text-blue-500'>About</Link>
-                    <Link href="/blog" className='hover:text-blue-500'>Blog</Link>
+                    <Link href="/about" className='hover:text-blue-500' onClick={handleClickLink}>About</Link>
+                    <Link href="/blog" className='hover:text-blue-500' onClick={handleClickLink}>Blog</Link>
                     <li className="hover:text-blue-500 cursor-pointer" onClick={handleClickResume}>Resume</li>
                 </ul>
 
@@ -55,7 +57,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                     </h1>
                     <ul className=' gap-x-6 text-xl font-light tracking-wider hidden sm:flex'>
                         <Link href="/about" className='hover:text-blue-500'>About</Link>
-                        <Link href="/blog" className='hover:text-blue-500'>Blog</Link>
+                        <Link href="/blog" className='hover:text-blue-500' >Blog</Link>
                         <li className="hover:text-blue-500 cursor-pointer" onClick={handleClickResume}>Resume</li>
                     </ul>
 
