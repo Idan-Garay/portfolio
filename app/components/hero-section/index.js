@@ -11,7 +11,6 @@ export const HeroSection = () => {
     <div className={styles.heroSection}>
       <StickyCursor stickyElement={stickyElement} />
       <div className={styles.stars}></div>
-      {/* <div className={styles.heroGlowBlur}> </div> */}
       <div className={styles.heroHeaderContent}>
         <h1 className={styles.heroHeader}>
           {"<I"}
@@ -21,10 +20,10 @@ export const HeroSection = () => {
         <h3 className={styles.heroH3}>A Growing Software Engineer</h3>
         <h5 className={styles.heroH5}>Frontend Developer</h5>
       </div>
-      <StartHere ref={stickyElement} className={styles.startHere}>
-        <h2>ENTER</h2>
-      </StartHere>
-      {/* <FramerMagnetic></FramerMagnetic> */}
+
+      <FramerMagnetic>
+        <StartHere ref={stickyElement} />
+      </FramerMagnetic>
     </div>
   );
 };

@@ -15,7 +15,8 @@
 .heroSection {
     height: 100dvh;
     position: relative;
-    background: radial-gradient(circle at center, hsl(145, 52%, 45%) 0%, hsl(145, 52%, 45%, 0) 15rem)
+    background: radial-gradient(circle at center, hsl(145, 52%, 45%) 0%, hsl(145, 52%, 45%, 0) 15rem);
+    overflow: hidden;
 }
 
 .heroHeaderContent {
@@ -515,7 +516,7 @@
     background-color: black;
     color: white;
     letter-spacing: 3px;
-    border-radius: 50%;
+    border-radius: 100%;
     /* border: 1px solid white; */
     display: flex;
     align-items: center;
@@ -526,4 +527,16 @@
     bottom: 5%;
     left: 50%;
     transform: translateX(-50%);
+}
+
+.bounds {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.bounds:hover {
+    transform: scale(3);
 }

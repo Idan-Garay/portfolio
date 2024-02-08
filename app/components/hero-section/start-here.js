@@ -1,10 +1,15 @@
 "use client";
-import { motion } from "framer-motion";
+import styles from "./index.module.css"
 import { forwardRef } from "react";
 
 export const StartHere = forwardRef((props, ref) => {
-  return <motion.div ref={ref} {...props}/>
+  return (
+    <div {...props} className={styles.startHere}>
+      <h2>
+        ENTER<div ref={ref} className={styles.bounds}></div>
+      </h2>
+    </div>
+  );
 });
 
-
-StartHere.displayName = "Start Here"
+StartHere.displayName = "Start Here";
