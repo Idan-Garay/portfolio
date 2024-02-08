@@ -1,9 +1,11 @@
+"use client";
 import styles from "./hero-section/index.module.css";
 import { motion, useMotionValue, useSpring } from "framer-motion";
-import { useLayoutEffect } from "react";
+import { useEffect, useState } from "react";
 
-export default function StickyCursor({ children }) {
-  const CURSOR_SIZE = 100;
+export default function StickyCursor({ children, stickyElement }) {
+  const [isHovered, setIsHovered] = useState(false);
+  const cursorSize = isHovered ? 150 : 30;
   const position = { x: useMotionValue(0), y: useMotionValue(0) };
   const smoothConfiguration = {
     stiffness: 300,
@@ -17,21 +19,35 @@ export default function StickyCursor({ children }) {
   };
   const mouseMove = (e) => {
     const { clientX, clientY } = e;
-    // const { width, height, left, top } = ref.current.getBoundingClientRect();
-    position.x.set(clientX - (CURSOR_SIZE / 2));
-    position.y.set(clientY - (CURSOR_SIZE / 2));
+    const { width, height, left, top } =
+      stickyElement.current.getBoundingClientRect();
+
+    if (isHovered) {
+      const center = { x: left + width / 2, y: top + height / 2 };
+      position.x.set(center.x - cursorSize / 2);
+      position.y.set(center.y - cursorSize / 2);
+    } else {
+      position.x.set(clientX - cursorSize / 2);
+      position.y.set(clientY - cursorSize / 2);
+    }
+  };
+
+  const mouseHover = (e) => {
+    setIsHovered(true);
   };
 
   const mouseLeave = (e) => {
-    position.x.set(0);
-    position.y.set(0);
+    setIsHovered(false);
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     window.addEventListener("mousemove", mouseMove);
-
+    stickyElement.current.addEventListener("mouseover", mouseHover);
+    stickyElement.current.addEventListener("mouseleave", mouseLeave);
     return () => {
       window.removeEventListener("mousemove", mouseMove);
+      stickyElement.current.removeEventListener("mouseover", mouseHover);
+      stickyElement.current.removeEventListener("mouseleave", mouseLeave);
     };
   });
 
@@ -41,6 +57,7 @@ export default function StickyCursor({ children }) {
       onMouseLeave={mouseLeave}
       className={styles.cursorCircle}
       style={{ ...smoothPosition }}
+      animate={{ width: cursorSize, height: cursorSize }}
     >
       {children}
     </motion.div>
