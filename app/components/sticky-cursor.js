@@ -1,6 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 import styles from "./hero-section/index.module.css";
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import {
+  motion,
+  useMotionValue,
+  useSpring,
+} from "framer-motion";
 import { useEffect, useState } from "react";
 
 export default function StickyCursor({ children, stickyElement }) {
@@ -42,7 +47,7 @@ export default function StickyCursor({ children, stickyElement }) {
   };
 
   useEffect(() => {
-    window.addEventListener("mousemove", mouseMove);    
+    window.addEventListener("mousemove", mouseMove);
     stickyElement.current.addEventListener("mouseover", mouseHover);
     stickyElement.current.addEventListener("mouseleave", mouseLeave);
     return () => {
@@ -57,8 +62,13 @@ export default function StickyCursor({ children, stickyElement }) {
       onMouseMove={mouseMove}
       onMouseLeave={mouseLeave}
       className={styles.cursorCircle}
-      style={{ ...smoothPosition }}
-      animate={{ width: cursorSize, height: cursorSize }}
+      style={{
+        ...smoothPosition,
+      }}
+      animate={{
+        width: cursorSize,
+        height: cursorSize,
+      }}
     >
       {children}
     </motion.div>
