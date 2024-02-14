@@ -12,10 +12,10 @@
 }
 
 .heroSection {
-    height: 100dvh;
     position: relative;
     background: radial-gradient(circle at center, hsl(145, 52%, 45%) 0%, hsl(145, 52%, 45%, 0) 30%);
     overflow: hidden;
+    scroll-snap-type: y mandatory;
 }
 
 .heroHeaderContent {

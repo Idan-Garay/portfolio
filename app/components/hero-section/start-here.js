@@ -1,11 +1,11 @@
 "use client";
 import styles from "./index.module.css";
-import { forwardRef } from "react";
-import { motion, useCycle } from "framer-motion";
+import { forwardRef, useEffect } from "react";
+import { motion, useCycle, useInView } from "framer-motion";
 
 export const StartHere = forwardRef((props, ref) => {
-  const { heroSectionScope, heroSectionAnimate } = props.inputprops;
-  const [isOpened, toggleIsOpened] = useCycle(true, false);
+  const [isOpened, toggleIsOpened] = useCycle(false, true);
+  const isInView = useInView(ref);
   const zoomBackgroundVariants = {
     open: {
       transform: "scale(20,20)",
@@ -18,8 +18,22 @@ export const StartHere = forwardRef((props, ref) => {
 
   const handleClick = (e) => {
     toggleIsOpened();
-    heroSectionAnimate(heroSectionScope.current);
+    if (!isOpened) {
+      setTimeout(() => {
+        document.querySelector(".page").scrollBy({
+          top: 100,
+          left: 100,
+          behavior: "smooth",
+        });
+      }, 600);
+    }
   };
+
+  useEffect(() => {
+    if (isOpened) {
+      toggleIsOpened();
+    }
+  }, [isInView]);
   return (
     <div className={styles.startHerePosition}>
       <div style={{ position: "relative", overflow: "visible" }}>
