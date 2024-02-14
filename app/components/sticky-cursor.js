@@ -42,7 +42,7 @@ export default function StickyCursor({ children, stickyElement }) {
   };
 
   useEffect(() => {
-    window.addEventListener("mousemove", mouseMove);
+    window.addEventListener("mousemove", mouseMove);    
     stickyElement.current.addEventListener("mouseover", mouseHover);
     stickyElement.current.addEventListener("mouseleave", mouseLeave);
     return () => {
