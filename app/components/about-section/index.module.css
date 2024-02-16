@@ -1,8 +1,8 @@
 .aboutSection {
     height: 100dvh;
     position: relative;
-    background: white;
-    color: black;
+    background: hsl(var(--muted));
+    color: hsl(var(--foreground));
     /* padding-right: 0; */
     /* border: 1px solid red; */
 }
@@ -42,6 +42,7 @@
     letter-spacing: -2%;
     padding-bottom: 1.5rem;
     font-size: var(--font-size-xxxl);
+    color: hsl(var(--background));
 }
 
 .usc {
@@ -56,12 +57,13 @@
     white-space: nowrap;
     font-weight: 500;
     font-size: var(--font-size-md);
+    color: hsl(var(--background));
     /* border: 1px solid black; */
 }
 
 .uscLine {
     content: ' ';
-    background: #000;
+    background: hsl(var(--background));
     height: 2px;
     min-width: 8rem;
     flex-basis: 60%;
@@ -92,7 +94,7 @@
     /* margin-right: -1rem; */
     padding-top: 2rem;
     height: 100%;
-    background: #F2F2F2;
+    background: hsl(var(--muted-foreground));
     /* border: 1px solid yellow; */
 }
 
@@ -166,7 +168,7 @@
         position: relative;
         overflow-x: hidden;
     }
-    
+
     .leftPersonaImgLabel {
         display: flex;
         justify-content: flex-end;
@@ -180,7 +182,7 @@
     }
 
     .personaImgLabelLine {
-        border-top: 1px solid black;
+        border-top: 1px solid hsl(var(--background));
         border-left: none;
         height: 2px;
         width: 30px;
@@ -210,9 +212,10 @@
     .personaImgLabel {
         top: 22.5rem;
     }
+
     .personaImgLabelLine {
-        border-top: 2px solid black;
-        border-left: 2px solid black;
+        border-top: 2px solid hsl(var(--background));
+        border-left: 2px solid hsl(var(--background));
         height: 70.5px;
         width: 5rem;
         height: 70.5px;
