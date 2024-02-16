@@ -1,12 +1,14 @@
 "use client";
 import { HeroSection } from "./components/hero-section";
 import { AboutSection } from "./components/about-section";
+import { ExpSkillsSection } from "./components/exp-skills-section";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
-      <AboutSection />
+      {/* <AboutSection /> */}
+      {/* <ExpSkillsSection /> */}
     </>
   );
 }

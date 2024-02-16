@@ -1,0 +1,17 @@
+.expSkillsSection {
+    height: 100dvh;
+    position: relative;
+    background: white;
+    color: black;
+    /* padding-right: 0; */
+    /* border: 1px solid red; */
+}
+
+.sectionContent {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    max-height: 80%;
+    width: 100%;
+    /* border: 1px solid green; */
+}
