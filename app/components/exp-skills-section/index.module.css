@@ -19,6 +19,7 @@
     max-height: 85%;
     text-align: center;
     gap: 3.5rem;
+    overflow-x: hidden;
 }
 
 
