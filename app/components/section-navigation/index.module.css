@@ -1,0 +1,21 @@
+.contact {
+    position: relative;
+    pointer-events: all;
+}
+
+.contact::before {
+    content: "";
+    height: 2px;
+    background: black;
+    display: block;
+    width: 0%;
+    margin-top: auto;
+    position: absolute;    
+    bottom: -2px;
+    transition-property: width;
+    transition-duration: 0.5s;
+}
+
+.contact:hover::before {
+    width: 100%;
+}

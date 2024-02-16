@@ -1,9 +1,9 @@
 import { roboto } from "@/app/fonts";
 import Image from "next/image";
 import styles from "./index.module.css";
-import Link from "next/link";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
+import { SectionNavigation } from "../section-navigation";
 
 export const AboutSection = () => {
   const ref = useRef();
@@ -23,36 +23,7 @@ export const AboutSection = () => {
 
   return (
     <section id="about" className={styles.aboutSection}>
-      <nav
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          height: "10%",
-        }}
-      >
-        <div
-          className=""
-          style={{
-            minWidth: "6.5rem",
-            height: "2.5rem",
-            objectFit: "contain",
-            position: "relative",
-          }}
-        >
-          <Image
-            src="/white-logo.svg"
-            alt="logo"
-            fill
-            sizes="(max-width: 768px) 100px, 130px"
-          />
-        </div>
-
-        <Link href="#contact" className={styles.contact}>
-          <div className="">Contact</div>
-        </Link>
-      </nav>
-
+      <SectionNavigation />
       <div className={styles.sectionContent}>
         <div className={styles.left}>
           <h1
@@ -73,7 +44,7 @@ export const AboutSection = () => {
             developer
           </p>
 
-          <div className={styles.leftPersonaImgLabel} >
+          <div className={styles.leftPersonaImgLabel}>
             <p
               style={{
                 paddingTop: "0",
@@ -124,7 +95,6 @@ export const AboutSection = () => {
           </div>
         </div>
       </div>
-
       <div className={styles.footer}>Idan Joshua T. Garay</div>
     </section>
   );

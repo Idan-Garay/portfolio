@@ -146,28 +146,6 @@
     top: 25rem;
 }
 
-.contact {
-    position: relative;
-    pointer-events: all;
-}
-
-.contact::before {
-    content: "";
-    height: 2px;
-    background: black;
-    display: block;
-    width: 0%;
-    margin-top: auto;
-    position: absolute;    
-    bottom: -2px;
-    transition-property: width;
-    transition-duration: 0.5s;
-}
-
-.contact:hover::before {
-    width: 100%;
-}
-
 .footer {
     height: 10%;
     display: flex;
@@ -179,7 +157,6 @@
         padding-right: 7%;
     }
 
-
     .left {
         padding-top: 5vh;
         flex-basis: 100%;
@@ -189,22 +166,7 @@
         position: relative;
         overflow-x: hidden;
     }
-
-    .leftPersona {
-        position: relative;
-        display: flex;
-        flex-wrap: nowrap;
-    }
-
-    .leftPersonaImgContainer {
-        border: 1px solid black;
-        display: block;
-        position: relative;
-        height: 18.75rem;
-        width: 18.75rem;
-        margin-left: auto;
-    }
-
+    
     .leftPersonaImgLabel {
         display: flex;
         justify-content: flex-end;
