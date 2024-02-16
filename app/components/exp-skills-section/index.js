@@ -48,7 +48,7 @@ export const ExpSkillsSection = () => {
   const skillStyle = {
     transition: "all 0.8s",
     opacity: isInView ? 1 : 0,
-    transform: isInView ? "none" : "translateX(-150px)",
+    transform: isInView ? "none" : "translateX(150px)",
   };
 
   return (
