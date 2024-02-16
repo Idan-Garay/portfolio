@@ -20,7 +20,7 @@ export const StartHere = forwardRef((props, ref) => {
     toggleIsOpened();
     if (!isOpened) {
       setTimeout(() => {
-        document.querySelector(".page").scrollBy({
+        document.querySelector("body").scrollBy({
           top: 100,
           left: 100,
           behavior: "smooth",

@@ -75,6 +75,16 @@
   }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: unset;
+  font-weight: unset;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -89,9 +99,6 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 a {
@@ -104,14 +111,23 @@ a {
     color-scheme: dark;
   }
 }
-.page {
+
+body {
+  background: white;
+  display: flex;
+  justify-content: center;
   height: 100dvh;
+  margin: 0 auto;
   scroll-snap-type: y mandatory;
+  overflow-x: hidden;
   overflow-y: scroll;
-  scroll-behavior: smooth; 
+  scroll-behavior: smooth;
 }
 
-.page>section {
+body>section {
   height: 100dvh;
+  padding: 0 7%;
   scroll-snap-align: start;
+  max-width: 1440px;
+  min-width: 320px;
 }

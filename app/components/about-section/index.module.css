@@ -1,6 +1,238 @@
 .aboutSection {
     height: 100dvh;
-    width: 100%;
     position: relative;
-    scroll-snap-align: start;
+    background: white;
+    color: black;
+    /* padding-right: 0; */
+    /* border: 1px solid red; */
+}
+
+.sectionContent {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    max-height: 80%;
+    width: 100%;
+    /* border: 1px solid green; */
+}
+
+.left {
+    flex-basis: 40%;
+    flex-grow: 1;
+    overflow-x: visible;
+    position: relative;
+    padding-top: 10vh;
+    z-index: 999;
+    /* border: 1px solid blue; */
+}
+
+.leftPersonaImgLabel {
+    display: none;
+}
+
+.p {
+    padding-top: 3.5rem;
+    font-size: var(--font-size-md);
+    font-weight: 300;
+    letter-spacing: -2%;
+}
+
+.csGraduate {
+    font-weight: 300;
+    letter-spacing: -2%;
+    padding-bottom: 1.5rem;
+    font-size: var(--font-size-xxxl);
+}
+
+.usc {
+    max-width: 50rem;
+    position: absolute;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    padding-left: 3vw;
+    white-space: nowrap;
+    font-weight: 500;
+    font-size: var(--font-size-md);
+    /* border: 1px solid black; */
+}
+
+.uscLine {
+    content: ' ';
+    background: #000;
+    height: 2px;
+    min-width: 8rem;
+    flex-basis: 60%;
+    flex-grow: 1;
+    /* min-width: 1vw; */
+}
+
+.uscText {
+    flex-grow: 3;
+    flex-basis: 40%;
+}
+
+.leftPersonaImgContainer {
+    display: none;
+}
+
+.leftPersonaImg {
+    max-height: 350px;
+    /* border: 1px solid red; */
+    aspect-ratio: 1/2;
+    object-fit: contain;
+}
+
+.right {
+    flex-basis: 60%;
+    flex-grow: 1;
+    width: 100%;
+    /* margin-right: -1rem; */
+    padding-top: 2rem;
+    height: 100%;
+    background: #F2F2F2;
+    /* border: 1px solid yellow; */
+}
+
+.sanctions {
+    position: relative;
+    /* max-width: 800px; */
+    width: 100%;
+    right: 16%;
+    height: 100%;
+    /* border: 3px solid orange; */
+}
+
+.greenWall {
+    /* border: 3px solid gold; */
+    position: absolute;
+    left: 0;
+    height: 28.125rem;
+    max-width: 40.625rem;
+    max-height: 450px;
+    aspect-ratio: 4/3;
+    object-fit: contain;
+}
+
+.persona {
+    /* z-index: 999; */
+    position: relative;
+    /* top: -5%; */
+    right: -5%;
+    max-width: 800px;
+    height: 100%;
+    width: 100%;
+    /* border: 3px solid green; */
+    overflow: visible;
+}
+
+.personaImg {
+    position: absolute;
+    max-height: 350px;
+    width: 100%;
+    /* border: 1px solid red; */
+    transform: translate(10%, 25%);
+    aspect-ratio: 1/2;
+    right: -5px;
+    object-fit: contain;
+}
+
+.personaImgLabel {
+    display: block;
+    position: absolute;
+    left: 6rem;
+    top: 25rem;
+}
+
+.footer {
+    height: 10%;
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 1080px) {
+    .aboutSection {
+        padding-right: 7%;
+    }
+
+
+    .left {
+        padding-top: 5vh;
+        flex-basis: 100%;
+        height: 100%;
+        width: 100%;
+        overflow-y: auto;
+        position: relative;
+    }
+
+    .leftPersona {
+        position: relative;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .leftPersonaImgContainer {
+        border: 1px solid black;
+        display: block;
+        position: relative;
+        height: 18.75rem;
+        width: 18.75rem;
+        margin-left: auto;
+    }
+
+    .leftPersonaImgLabel {
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 15px;
+        position: relative;
+        top: 3rem;
+        left: auto;
+        width: auto;
+    }
+
+    .personaImgLabelLine {
+        border-top: 1px solid black;
+        border-left: none;
+        height: 2px;
+        width: 30px;
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+
+    .right {
+        height: 60%;
+        flex-basis: 100%;
+        display: none;
+    }
+
+    .sanctions {
+        right: 0;
+    }
+}
+
+
+@media screen and (min-width: 720px) {
+    .right {
+        padding-top: 0rem;
+    }
+}
+
+@media screen and (min-width: 1081px) {
+    .personaImgLabel {
+        top: 22.5rem;
+    }
+    .personaImgLabelLine {
+        border-top: 2px solid black;
+        border-left: 2px solid black;
+        height: 70.5px;
+        width: 5rem;
+        height: 70.5px;
+        margin-left: 15%;
+        margin-bottom: -10%;
+    }
+
 }

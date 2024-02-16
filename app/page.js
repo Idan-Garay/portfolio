@@ -4,12 +4,11 @@ import { AboutSection } from "./components/about-section";
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";
 
-
 export default function Home() {
   return (
-    <main className="page">
-      <HeroSection />
+    <>
+      {/* <HeroSection /> */}
       <AboutSection />
-    </main>
+    </>
   );
 }
