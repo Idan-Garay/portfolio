@@ -44,7 +44,7 @@ const skills = [
 
 export const ExpSkillsSection = () => {
   const ref = useRef();
-  const isInView = useInView(ref, { once: false });
+  const isInView = useInView(ref, { once: true });
   const skillStyle = {
     transition: "all 0.8s",
     opacity: isInView ? 1 : 0,

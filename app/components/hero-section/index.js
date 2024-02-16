@@ -10,7 +10,7 @@ export const HeroSection = () => {
   const stickyElement = useRef(null);
   
   return (
-    <section className={styles.heroSection}>
+    <section id="heroSection" className={styles.heroSection}>
       <StickyCursor stickyElement={stickyElement} />
       <div className={styles.stars}></div>
       <div className={styles.heroHeaderContent}>

@@ -7,7 +7,7 @@ import { SectionNavigation } from "../section-navigation";
 
 export const AboutSection = () => {
   const ref = useRef();
-  const isInView = useInView(ref, { once: false });
+  const isInView = useInView(ref, { once: true });
 
   const leftToRight = {
     transform: isInView ? "none" : "translateX(-150px)",
