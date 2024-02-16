@@ -22,7 +22,7 @@
     overflow-x: visible;
     position: relative;
     padding-top: 10vh;
-    z-index: 999;
+    z-index: 900;
     /* border: 1px solid blue; */
 }
 
@@ -144,6 +144,28 @@
     position: absolute;
     left: 6rem;
     top: 25rem;
+}
+
+.contact {
+    position: relative;
+    pointer-events: all;
+}
+
+.contact::before {
+    content: "";
+    height: 2px;
+    background: black;
+    display: block;
+    width: 0%;
+    margin-top: auto;
+    position: absolute;    
+    bottom: -2px;
+    transition-property: width;
+    transition-duration: 0.5s;
+}
+
+.contact:hover::before {
+    width: 100%;
 }
 
 .footer {

@@ -48,7 +48,7 @@ export const AboutSection = () => {
           />
         </div>
 
-        <Link href="#contact">
+        <Link href="#contact" className={styles.contact}>
           <div className="">Contact</div>
         </Link>
       </nav>
@@ -57,7 +57,7 @@ export const AboutSection = () => {
         <div className={styles.left}>
           <h1
             ref={ref}
-            style={{ ...roboto.style, ...leftToRight }}
+            style={{ ...roboto.style, ...leftToRight, zIndex: 50 }}
             className={styles.csGraduate}
           >
             CS Graduate
