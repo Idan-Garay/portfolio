@@ -18,6 +18,36 @@
     scroll-snap-type: y mandatory;
 }
 
+.nav {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 7%;
+}
+
+.contact {
+    text-decoration: inherit;
+    display: block;
+    border: 1px solid hsl(var(--primary-foreground));
+    color: hsl(var(--primary-foreground));
+    padding: 0.3rem 0.9rem;
+    opacity: 1;
+}
+
+.contact:hover {
+    transition: all 0.5s;
+    background-color: hsla(var(--primary)/20%);
+}
+
+.blackLogo {
+    min-width: 6.5rem;
+    height: 2.5rem;
+    object-fit: contain;
+    position: relative;
+}
+
 .heroHeaderContent {
     text-align: center;
     position: relative;
@@ -38,7 +68,6 @@
 
 .heroHeaderSpan {
     color: hsl(var(--muted))
-
 }
 
 .heroH3 {
