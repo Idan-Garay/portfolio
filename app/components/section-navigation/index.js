@@ -2,24 +2,11 @@ import styles from "./index.module.css";
 import Image from "next/image";
 import Link from "next/link";
 
-export const SectionNavigation = () => {
+export const SectionNavigation = ({ title = "" }) => {
   return (
-    <nav
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        height: "10%",
-      }}
-    >
+    <nav className={styles.nav}>
       <div
-        className=""
-        style={{
-          minWidth: "6.5rem",
-          height: "2.5rem",
-          objectFit: "contain",
-          position: "relative",
-        }}
+        className={styles.logo}
       >
         <Image
           src="/white-logo.svg"
@@ -28,6 +15,8 @@ export const SectionNavigation = () => {
           sizes="(max-width: 768px) 100px, 130px"
         />
       </div>
+
+      <h4 className={styles.title}>{title}</h4>
 
       <Link href="#contact" className={styles.contact}>
         <div className="">Contact</div>

@@ -6,9 +6,9 @@ import { ExpSkillsSection } from "./components/exp-skills-section";
 export default function Home() {
   return (
     <>
-      <HeroSection />
-      <AboutSection />
-      {/* <ExpSkillsSection /> */}
+      {/* <HeroSection /> */}
+      {/* <AboutSection /> */}
+      <ExpSkillsSection />
     </>
   );
 }

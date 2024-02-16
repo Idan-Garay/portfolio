@@ -1,6 +1,25 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10%;
+}
+
+.logo {
+    min-width: 6.5rem;
+    height: 2.5rem;
+    object-fit: contain;
+    position: relative;
+}
+
+.title {
+    color: hsl(var(--ghost-foreground));
+    font-weight: 300;
+    letter-spacing: 3%;
+}
+
 .contact {
     position: relative;
-    pointer-events: all;
 }
 
 .contact::before {
@@ -9,8 +28,7 @@
     background: hsl(var(--foreground));
     display: block;
     width: 0%;
-    margin-top: auto;
-    position: absolute;    
+    position: absolute;
     bottom: -2px;
     transition-property: width;
     transition-duration: 0.5s;
