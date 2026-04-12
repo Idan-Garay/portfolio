@@ -1,0 +1,54 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import ProjectForm from "../components/ProjectForm";
+
+const steps = [
+  { step: "01", title: "I review your submission", detail: "I read every response carefully and assess whether we're a fit based on scope, budget, and goals." },
+  { step: "02", title: "I reach out within 24 hours", detail: "If it looks like a good match, I'll reply with a quick message and suggest a short call to align on details." },
+  { step: "03", title: "We align on scope & cost", detail: "We talk through what you need, I ask the right questions, and put together a clear proposal with no surprises." },
+  { step: "04", title: "We get to work", detail: "Once you're happy with the plan, we kick off — with clear milestones and regular updates throughout." },
+];
+---
+
+<Layout>
+  <Nav />
+
+  <main class="max-w-5xl mx-auto px-6 pt-40 pb-24">
+
+    <!-- Header -->
+    <div class="text-center mb-16 space-y-4 max-w-2xl mx-auto">
+      <span class="font-label text-[10px] tracking-[0.25em] text-primary font-bold uppercase">Work With Me</span>
+      <h1 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.08]">
+        Let's Build Something<br />That Works
+      </h1>
+      <p class="text-on-surface-variant text-base leading-relaxed">
+        Starting a new project or need a quick quote? Pick what fits and I'll get back to you within 24 hours.
+      </p>
+    </div>
+
+    <!-- Form -->
+    <ProjectForm client:load />
+
+    <!-- What happens next -->
+    <div class="mt-20">
+      <div class="text-center mb-10 space-y-2">
+        <h2 class="font-headline text-2xl font-extrabold tracking-tight">What happens next?</h2>
+        <p class="text-on-surface-variant text-sm">Here's how the process works after you submit.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {steps.map((item) => (
+          <div class="glass-card rounded-xl p-6 inner-highlight space-y-3">
+            <div class="text-4xl font-headline font-extrabold text-primary/15">{item.step}</div>
+            <h4 class="font-headline font-bold text-primary text-base leading-snug">{item.title}</h4>
+            <p class="text-sm text-on-surface-variant leading-relaxed">{item.detail}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </main>
+
+  <Footer />
+</Layout>
