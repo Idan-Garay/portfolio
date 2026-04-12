@@ -1,20 +1,27 @@
 ---
+const pathname = Astro.url.pathname;
+
 const navLinks = [
-  { label: 'About', href: '#', active: true },
+  { label: 'About', href: '/' },
   { label: 'Case Studies', href: '/case-studies' },
   { label: 'Contact', href: '#' },
 ]
+
+function isActive(href: string) {
+  if (href === '/') return pathname === '/';
+  return pathname.startsWith(href);
+}
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 flex justify-center items-center w-full">
   <nav class="glass-nav rounded-full mt-6 mx-auto w-fit px-6 py-2 shadow-[0_0_30px_rgba(0,0,0,0.5)] flex items-center gap-8">
-    <span class="font-headline font-extrabold text-primary tracking-tighter text-lg">.Dev</span>
+    <a href="/" class="font-headline font-extrabold text-primary tracking-tighter text-lg">.Dev</a>
     <div class="hidden md:flex gap-6 items-center">
       {navLinks.map((link) => (
         <a
           class:list={[
             'font-headline text-sm tracking-tight transition-colors',
-            link.active
+            isActive(link.href)
               ? 'font-bold text-primary border-b-2 border-primary/50 pb-0.5'
               : 'font-medium text-zinc-400 hover:text-white',
           ]}
