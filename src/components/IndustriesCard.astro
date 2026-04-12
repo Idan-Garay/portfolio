@@ -1,0 +1,24 @@
+---
+const industries = [
+  "HVAC & Home Services",
+  "Automotive Groups",
+  "Medical Clinics",
+  "Logistics & Delivery",
+];
+---
+
+<div class="md:col-span-12 glass-card rounded-xl p-10 md:p-16 border-primary/20 bg-gradient-to-br from-primary/5 via-transparent to-transparent inner-highlight">
+  <div class="max-w-4xl">
+    <h3 class="font-headline text-3xl md:text-4xl font-extrabold mb-10 tracking-tight leading-tight">
+      Optimizing operations for service leaders who have outgrown their existing tools.
+    </h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {industries.map((industry) => (
+        <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/5 hover:border-primary/20 transition-all shadow-[0_0_10px_rgba(0,71,171,0.05)]">
+          <span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+          <span class="text-on-surface-variant font-bold text-xs uppercase tracking-wider">{industry}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets";
+import ntensewrapLogo from "../assets/logos/ntensewrap.png";
+import drawpointLogo from "../assets/logos/drawpoint-logo.png";
+---
+
+<div class="md:col-span-4 glass-card rounded-xl p-10 flex flex-col justify-between inner-highlight group">
+  <div class="bg-primary/10 w-14 h-14 rounded-xl flex items-center justify-center mb-8 border border-primary/20 group-hover:bg-primary/20 transition-colors">
+    <span class="material-symbols-outlined text-primary text-3xl">verified</span>
+  </div>
+  <div>
+    <h3 class="font-headline text-2xl font-bold mb-4">Built for Your Business to Grow</h3>
+    <p class="text-on-surface-variant leading-relaxed text-sm">
+      Websites and apps that are fast, reliable, and easy to manage—so you can focus on running your business, not fixing tech.
+    </p>
+  </div>
+  <div class="mt-10 pt-10 border-t border-white/5 flex flex-col gap-4">
+    <div class="flex items-center gap-4">
+      <div class="flex -space-x-3">
+        <div class="w-10 h-10 rounded-full border-2 border-black bg-zinc-800 flex items-center justify-center overflow-hidden p-1.5">
+          <Image alt="Ntensewrap" class="w-full h-full object-contain" src={ntensewrapLogo} />
+        </div>
+        <div class="w-10 h-10 rounded-full border-2 border-black bg-zinc-800 flex items-center justify-center overflow-hidden p-1.5">
+          <Image alt="Drawpoint" class="w-full h-full object-contain" src={drawpointLogo} />
+        </div>
+        <div class="w-10 h-10 rounded-full border-2 border-black bg-primary flex items-center justify-center text-[12px] font-bold text-white">
+          3+
+        </div>
+      </div>
+      <span class="text-xs text-on-surface-variant font-bold uppercase tracking-wider">Real-World Builds</span>
+    </div>
+  </div>
+</div>

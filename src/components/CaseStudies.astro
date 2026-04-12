@@ -1,0 +1,45 @@
+---
+import { Image } from "astro:assets";
+import ntensewrapLogo from "../assets/logos/ntensewrap.png";
+import drawpointLogo from "../assets/logos/drawpoint-logo.png";
+
+const studies = [
+  {
+    tag: "Case Study: Automotive",
+    title: "Booking Intelligence Engine",
+    description: "Integrated custom API layers with legacy scheduling software to increase conversion by 45%.",
+    logo: ntensewrapLogo,
+  },
+  {
+    tag: "Case Study: Infrastructure",
+    title: "Distributed Knowledge Vault",
+    description: "High-availability documentation system optimized for search speed across 150+ globally distributed nodes.",
+    logo: drawpointLogo,
+  },
+];
+---
+
+{studies.map((study) => (
+  <div class="md:col-span-6 glass-card rounded-xl overflow-hidden group inner-highlight">
+    <div class="h-72 bg-surface-container-highest relative overflow-hidden flex items-center justify-center">
+      <Image
+        class="max-h-32 w-auto object-contain opacity-80 transition-all duration-1000 group-hover:scale-110 group-hover:opacity-100"
+        alt={study.title}
+        src={study.logo}
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-surface-container-highest/80 pointer-events-none" />
+      <div class="absolute top-6 left-6">
+        <span class="bg-black/60 backdrop-blur-md px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] text-white border border-white/10">
+          {study.tag}
+        </span>
+      </div>
+    </div>
+    <div class="p-10">
+      <h4 class="font-headline text-2xl font-bold mb-3">{study.title}</h4>
+      <p class="text-on-surface-variant text-sm mb-8 leading-relaxed">{study.description}</p>
+      <a class="text-primary text-xs font-bold uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all" href="#">
+        Explore Technical Breakdown <span class="material-symbols-outlined text-sm">north_east</span>
+      </a>
+    </div>
+  </div>
+))}

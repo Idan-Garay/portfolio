@@ -57,7 +57,7 @@ export default function TechnicalWorkflow() {
 
   return (
     <div
-      className="glass-card rounded-xl p-10 grid grid-cols-1 md:grid-cols-3 gap-8 inner-highlight"
+      className="glass-card h-full rounded-xl p-10 grid grid-cols-1 md:grid-cols-3 gap-8 inner-highlight"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

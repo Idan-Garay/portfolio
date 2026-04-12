@@ -1,0 +1,37 @@
+---
+const items = [
+  {
+    icon: "web",
+    title: "Websites That Convert",
+    description: "High-performance websites designed to turn visitors into booked clients — fast, clear, and built for growth.",
+  },
+  {
+    icon: "settings_ethernet",
+    title: "Internal Systems That Save Time",
+    description: "Custom tools and automations that eliminate manual work, streamline operations, and free up hours every week.",
+  },
+  {
+    icon: "support_agent",
+    title: "Ongoing Technical Support",
+    description: "Reliable maintenance, monitoring, and improvements — so your systems stay fast, secure, and running without interruption.",
+  },
+];
+---
+
+<div class="md:col-span-5 glass-card rounded-xl p-10 relative group overflow-hidden inner-highlight">
+  <div class="absolute -right-20 -top-20 w-64 h-64 bg-primary/10 rounded-full blur-[80px] group-hover:bg-primary/20 transition-all duration-700"></div>
+  <h3 class="font-label text-[10px] tracking-[0.25em] text-primary font-bold uppercase mb-10 block">Expertise Areas</h3>
+  <div class="space-y-8">
+    {items.map((item) => (
+      <div class="flex items-start gap-5">
+        <div class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center shrink-0 border border-white/10 group-hover:border-primary/30 transition-colors">
+          <span class="material-symbols-outlined text-primary">{item.icon}</span>
+        </div>
+        <div>
+          <h4 class="font-headline font-bold text-lg text-white">{item.title}</h4>
+          <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
