@@ -1,0 +1,32 @@
+---
+const navLinks = [
+  { label: 'Work', href: '#', active: true },
+  { label: 'Tech', href: '#' },
+  { label: 'Journal', href: '#' },
+  { label: 'Contact', href: '#' },
+]
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 flex justify-center items-center w-full">
+  <nav class="glass-nav rounded-full mt-6 mx-auto w-fit px-6 py-2 shadow-[0_0_30px_rgba(0,0,0,0.5)] flex items-center gap-8">
+    <span class="font-headline font-extrabold text-primary tracking-tighter text-lg">.Dev</span>
+    <div class="hidden md:flex gap-6 items-center">
+      {navLinks.map((link) => (
+        <a
+          class:list={[
+            'font-headline text-sm tracking-tight transition-colors',
+            link.active
+              ? 'font-bold text-primary border-b-2 border-primary/50 pb-0.5'
+              : 'font-medium text-zinc-400 hover:text-white',
+          ]}
+          href={link.href}
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
+    <button class="hover:bg-primary-dim text-white px-5 py-2 rounded-full text-sm font-bold transition-all hover:scale-105 active:scale-95 neon-glow-primary cta-gradient">
+      Hire Me
+    </button>
+  </nav>
+</header>

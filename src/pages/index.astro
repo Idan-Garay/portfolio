@@ -1,8 +1,311 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero';
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import { Image } from "astro:assets";
+import aintboardLogo from "../assets/logos/aintboard.png";
+import drawpointLogo from "../assets/logos/drawpoint-logo.png";
+import ntensewrapLogo from "../assets/logos/ntensewrap.png";
+import TechnicalWorkflow from "../components/TechnicalWorkflow";
+
+const expertise = [
+  {
+    icon: "web",
+    title: "Websites That Convert",
+    description:
+      "High-performance websites designed to turn visitors into booked clients — fast, clear, and built for growth.",
+  },
+  {
+    icon: "settings_ethernet",
+    title: "Internal Systems That Save Time",
+    description:
+      "Custom tools and automations that eliminate manual work, streamline operations, and free up hours every week.",
+  },
+  {
+    icon: "support_agent",
+    title: "Ongoing Technical Support",
+    description:
+      "Reliable maintenance, monitoring, and improvements — so your systems stay fast, secure, and running without interruption.",
+  },
+];
+
+
+const caseStudies = [
+  {
+    tag: "Case Study: Automotive",
+    title: "Booking Intelligence Engine",
+    description:
+      "Integrated custom API layers with legacy scheduling software to increase conversion by 45%.",
+    logo: ntensewrapLogo,
+  },
+  {
+    tag: "Case Study: Infrastructure",
+    title: "Distributed Knowledge Vault",
+    description:
+      "High-availability documentation system optimized for search speed across 150+ globally distributed nodes.",
+    logo: drawpointLogo,
+  },
+];
+
+const industries = [
+  "HVAC & Home Services",
+  "Automotive Groups",
+  "Medical Clinics",
+  "Logistics & Delivery",
+];
 ---
 
 <Layout>
-	<Hero client:load />
+  <Nav />
+
+  <main class="max-w-7xl mx-auto px-6 pt-40 pb-24">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+      <!-- Hero Card -->
+      <div
+        class="md:col-span-8 glass-card rounded-xl p-8 md:p-14 flex flex-col justify-end relative overflow-hidden min-h-[480px] inner-highlight"
+      >
+        <div
+          class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent pointer-events-none"
+        >
+        </div>
+        <div
+          class="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-[120px] -mr-48 -mt-48"
+        >
+        </div>
+        <div class="relative z-10">
+          <span
+            class="font-label text-[10px] tracking-[0.2em] text-primary font-bold uppercase mb-6 block"
+            >Product-Focused Software Engineer</span
+          >
+          <h1
+            class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight mb-8 leading-[1.05]"
+          >
+            Engineering systems that help businesses <span class="text-primary"
+              >scale.</span
+            >
+          </h1>
+          <div class="flex flex-wrap items-center gap-6">
+            <button
+              class="text-white px-8 py-4 rounded-lg font-bold text-sm flex items-center gap-3 neon-glow-primary hover:neon-glow-hover transition-all transform hover:-translate-y-1 cta-gradient"
+            >
+              View Portfolio <span class="material-symbols-outlined text-sm"
+                >arrow_forward</span
+              >
+            </button>
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"
+              ></span>
+              <span
+                class="text-on-surface-variant text-sm font-medium tracking-tight"
+                >Available for new projects</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trust Card -->
+      <div
+        class="md:col-span-4 glass-card rounded-xl p-10 flex flex-col justify-between inner-highlight group"
+      >
+        <div
+          class="bg-primary/10 w-14 h-14 rounded-xl flex items-center justify-center mb-8 border border-primary/20 group-hover:bg-primary/20 transition-colors"
+        >
+          <span class="material-symbols-outlined text-primary text-3xl"
+            >verified</span
+          >
+        </div>
+        <div>
+          <h3 class="font-headline text-2xl font-bold mb-4">
+            Built for Your Business to Grow
+          </h3>
+          <p class="text-on-surface-variant leading-relaxed text-sm">
+            Websites and apps that are fast, reliable, and easy to manage—so you
+            can focus on running your business, not fixing tech.
+          </p>
+        </div>
+        <div class="mt-10 pt-10 border-t border-white/5 flex flex-col gap-4">
+          <div class="flex items-center gap-4">
+            <div class="flex -space-x-3">
+              <div
+                class="w-10 h-10 rounded-full border-2 border-black bg-zinc-800 flex items-center justify-center overflow-hidden p-1.5"
+              >
+                <Image
+                  alt="Ntensewrap"
+                  class="w-full h-full object-contain"
+                  src={ntensewrapLogo}
+                />
+              </div>
+              <div
+                class="w-10 h-10 rounded-full border-2 border-black bg-zinc-800 flex items-center justify-center overflow-hidden p-1.5"
+              >
+                <Image
+                  alt="Drawpoint"
+                  class="w-full h-full object-contain"
+                  src={drawpointLogo}
+                />
+              </div>
+              <div
+                class="w-10 h-10 rounded-full border-2 border-black bg-primary flex items-center justify-center text-[12px] font-bold text-white"
+              >
+                3+
+              </div>
+            </div>
+            <span
+              class="text-xs text-on-surface-variant font-bold uppercase tracking-wider"
+              >Real-World Builds</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Services Card -->
+      <div
+        class="md:col-span-5 glass-card rounded-xl p-10 relative group overflow-hidden inner-highlight"
+      >
+        <div
+          class="absolute -right-20 -top-20 w-64 h-64 bg-primary/10 rounded-full blur-[80px] group-hover:bg-primary/20 transition-all duration-700"
+        >
+        </div>
+        <h3
+          class="font-label text-[10px] tracking-[0.25em] text-primary font-bold uppercase mb-10 block"
+        >
+          Expertise Areas
+        </h3>
+        <div class="space-y-8">
+          {
+            expertise.map((item) => (
+              <div class="flex items-start gap-5">
+                <div class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center shrink-0 border border-white/10 group-hover:border-primary/30 transition-colors">
+                  <span class="material-symbols-outlined text-primary">
+                    {item.icon}
+                  </span>
+                </div>
+                <div>
+                  <h4 class="font-headline font-bold text-lg text-white">
+                    {item.title}
+                  </h4>
+                  <p class="text-sm text-on-surface-variant mt-1 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Process Card -->
+      <div class="md:col-span-7">
+        <TechnicalWorkflow />
+      </div>
+
+      <!-- Case Studies -->
+      {
+        caseStudies.map((study) => (
+          <div class="md:col-span-6 glass-card rounded-xl overflow-hidden group inner-highlight">
+            <div class="h-72 bg-surface-container-highest relative overflow-hidden flex items-center justify-center">
+              <Image
+                class="max-h-32 w-auto object-contain opacity-80 transition-all duration-1000 group-hover:scale-110 group-hover:opacity-100"
+                alt={study.title}
+                src={study.logo}
+              />
+              <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-surface-container-highest/80 pointer-events-none" />
+              <div class="absolute top-6 left-6">
+                <span class="bg-black/60 backdrop-blur-md px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] text-white border border-white/10">
+                  {study.tag}
+                </span>
+              </div>
+            </div>
+            <div class="p-10">
+              <h4 class="font-headline text-2xl font-bold mb-3">
+                {study.title}
+              </h4>
+              <p class="text-on-surface-variant text-sm mb-8 leading-relaxed">
+                {study.description}
+              </p>
+              <a
+                class="text-primary text-xs font-bold uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all"
+                href="#"
+              >
+                Explore Technical Breakdown{" "}
+                <span class="material-symbols-outlined text-sm">
+                  north_east
+                </span>
+              </a>
+            </div>
+          </div>
+        ))
+      }
+
+      <!-- Target Industries Card -->
+      <div
+        class="md:col-span-12 glass-card rounded-xl p-10 md:p-16 border-primary/20 bg-gradient-to-br from-primary/5 via-transparent to-transparent inner-highlight"
+      >
+        <div class="max-w-4xl">
+          <h3
+            class="font-headline text-3xl md:text-4xl font-extrabold mb-10 tracking-tight leading-tight"
+          >
+            Optimizing operations for service leaders who have outgrown their
+            existing tools.
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {
+              industries.map((industry) => (
+                <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/5 hover:border-primary/20 transition-all shadow-[0_0_10px_rgba(0,71,171,0.05)]">
+                  <span
+                    class="material-symbols-outlined text-primary"
+                    style="font-variation-settings: 'FILL' 1;"
+                  >
+                    check_circle
+                  </span>
+                  <span class="text-on-surface-variant font-bold text-xs uppercase tracking-wider">
+                    {industry}
+                  </span>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Card -->
+      <div
+        class="md:col-span-12 glass-card p-12 md:p-24 rounded-2xl flex flex-col items-center text-center relative overflow-hidden inner-highlight"
+      >
+        <div class="absolute inset-0 bg-primary/10 backdrop-blur-3xl"></div>
+        <div
+          class="absolute -top-40 -left-40 w-96 h-96 bg-primary/20 rounded-full blur-[150px]"
+        >
+        </div>
+        <div
+          class="absolute -bottom-40 -right-40 w-96 h-96 bg-primary/20 rounded-full blur-[150px]"
+        >
+        </div>
+        <div class="relative z-10 space-y-10">
+          <h2
+            class="font-headline text-4xl md:text-6xl font-extrabold text-white tracking-tight max-w-3xl leading-[1.1]"
+          >
+            Let's build the <span class="text-primary">infrastructure</span> for your
+            next phase of growth.
+          </h2>
+          <p
+            class="text-on-surface-variant font-medium max-w-xl mx-auto text-lg leading-relaxed"
+          >
+            Eliminate manual overhead and technical debt. Book a strategy-first
+            technical audit today.
+          </p>
+          <div class="pt-4">
+            <button
+              class="text-white px-10 py-5 rounded-xl font-extrabold text-xl hover:scale-105 transition-all shadow-2xl neon-glow-primary hover:neon-glow-hover active:scale-95 cta-gradient"
+            >
+              Book Technical Audit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
 </Layout>
