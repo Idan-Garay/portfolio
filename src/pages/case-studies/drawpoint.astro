@@ -1,0 +1,183 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import { Image } from "astro:assets";
+import drawpointTh from "../../assets/thumbnail-drawpoint.png";
+
+const delivered = [
+  { icon: "savings", label: "Cost-Optimized Rendering", detail: "Migrated away from paid map services to a free open-source alternative, cutting rendering costs significantly." },
+  { icon: "dashboard", label: "Internal Admin Dashboard", detail: "Built a Retool-powered dashboard giving non-technical team members full visibility into user data and platform activity." },
+  { icon: "payments", label: "Stripe Pricing Integration", detail: "Refactored the database structure to support flexible Stripe pricing models, enabling tiered plans and billing changes." },
+  { icon: "widgets", label: "Reusable UI System", detail: "Introduced a Shadcn component library to standardize the frontend, making future development faster and more consistent." },
+  { icon: "cable", label: "Third-Party Integrations", detail: "Connected external APIs for transactional email, error monitoring, and product analytics." },
+];
+
+const impact = [
+  "Reduced dependency on costly map rendering services",
+  "Improved internal workflows for managing users and data",
+  "Enabled a flexible pricing structure to support business growth",
+  "Made the frontend more scalable and easier to maintain",
+];
+
+const stack = [
+  { label: "React / Next.js", icon: "code" },
+  { label: "Redux", icon: "sync_alt" },
+  { label: "Shadcn UI", icon: "widgets" },
+  { label: "Stripe", icon: "payments" },
+  { label: "Retool", icon: "dashboard" },
+  { label: "Firebase", icon: "local_fire_department" },
+  { label: "Sentry", icon: "bug_report" },
+  { label: "Brevo", icon: "mail" },
+];
+---
+
+<Layout>
+  <Nav />
+
+  <main class="max-w-7xl mx-auto px-6 pt-40 pb-24">
+
+    <!-- Back -->
+    <a href="/case-studies" class="inline-flex items-center gap-2 text-on-surface-variant text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors mb-12 group">
+      <span class="material-symbols-outlined text-sm group-hover:-translate-x-1 transition-transform">arrow_back</span>
+      All Case Studies
+    </a>
+
+    <!-- Hero -->
+    <div class="glass-card rounded-2xl overflow-hidden inner-highlight mb-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12">
+        <div class="lg:col-span-5 relative overflow-hidden min-h-[280px]">
+          <Image
+            class="absolute inset-0 w-full h-full object-contain transition-transform duration-700"
+            alt="Drawpoint"
+            src={drawpointTh}
+          />
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent to-surface-container/60 pointer-events-none hidden lg:block"></div>
+        </div>
+        <div class="lg:col-span-7 p-10 md:p-14 flex flex-col justify-center gap-6">
+          <div>
+            <span class="font-label text-[10px] tracking-[0.25em] text-primary font-bold uppercase mb-4 block">Web Tool · 2026</span>
+            <h1 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.05] mb-4">Drawpoint</h1>
+            <p class="text-on-surface-variant text-base leading-relaxed max-w-xl">
+              A SaaS product that enables users to build customizable maps and integrate them into their websites — improving how information is presented and explored, without writing code.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <a href="https://www.drawpoint.io/" target="_blank" rel="noopener noreferrer" class="text-white px-6 py-3 rounded-lg font-bold text-sm flex items-center gap-2 cta-gradient neon-glow-primary hover:neon-glow-hover transition-all hover:-translate-y-0.5">
+              View Live Site <span class="material-symbols-outlined text-sm">open_in_new</span>
+            </a>
+            <a href="#" class="text-primary px-6 py-3 rounded-lg font-bold text-sm flex items-center gap-2 border border-primary/30 hover:bg-primary/10 transition-all">
+              Start a Project <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+
+      <!-- The Problem -->
+      <div class="md:col-span-5 glass-card rounded-xl p-10 inner-highlight">
+        <span class="font-label text-[10px] tracking-[0.25em] text-primary font-bold uppercase mb-6 block">The Problem</span>
+        <h2 class="font-headline text-2xl font-extrabold tracking-tight mb-8">What needed to be solved</h2>
+        <ul class="space-y-4">
+          {[
+            "High rendering costs from paid map services",
+            "Non-technical users had no visibility into platform data",
+            "Pricing model couldn't support product growth",
+            "UI was inconsistent and hard to extend",
+            "Third-party services weren't properly integrated",
+          ].map((item) => (
+            <li class="flex items-start gap-3 text-sm text-on-surface-variant leading-relaxed">
+              <span class="material-symbols-outlined text-primary text-base mt-0.5 shrink-0">arrow_right</span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- The Solution -->
+      <div class="md:col-span-7 glass-card rounded-xl p-10 inner-highlight relative overflow-hidden group">
+        <div class="absolute -right-16 -top-16 w-64 h-64 bg-primary/10 rounded-full blur-[80px] group-hover:bg-primary/20 transition-all duration-700"></div>
+        <span class="font-label text-[10px] tracking-[0.25em] text-primary font-bold uppercase mb-6 block">The Solution</span>
+        <h2 class="font-headline text-2xl font-extrabold tracking-tight mb-8">How I approached it</h2>
+        <ul class="space-y-4">
+          {[
+            "Migrated map rendering to a free open-source alternative to reduce costs",
+            "Built internal dashboards for non-developers using Retool",
+            "Refactored database structure to support new Stripe pricing models",
+            "Integrated third-party APIs for email, monitoring, and analytics",
+            "Implemented Redux for global state management and better UI control",
+            "Introduced Shadcn component library for a scalable, reusable UI system",
+          ].map((item) => (
+            <li class="flex items-start gap-3 text-sm text-on-surface-variant leading-relaxed">
+              <span class="material-symbols-outlined text-primary text-base mt-0.5 shrink-0" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Delivered -->
+      <div class="md:col-span-12 glass-card rounded-xl p-10 inner-highlight">
+        <span class="font-label text-[10px] tracking-[0.25em] text-primary font-bold uppercase mb-6 block">What Was Delivered</span>
+        <h2 class="font-headline text-2xl font-extrabold tracking-tight mb-8">Real, defensible outcomes</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          {delivered.map((item) => (
+            <div class="bg-white/5 border border-white/5 hover:border-primary/20 rounded-xl p-5 flex flex-col gap-3 transition-all group/item">
+              <div class="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center group-hover/item:bg-primary/20 transition-colors">
+                <span class="material-symbols-outlined text-primary text-xl">{item.icon}</span>
+              </div>
+              <h4 class="font-headline font-bold text-sm text-white leading-snug">{item.label}</h4>
+              <p class="text-xs text-on-surface-variant leading-relaxed">{item.detail}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Impact + Stack -->
+      <div class="md:col-span-7 glass-card rounded-xl p-10 inner-highlight">
+        <span class="font-label text-[10px] tracking-[0.25em] text-primary font-bold uppercase mb-6 block">Impact</span>
+        <h2 class="font-headline text-2xl font-extrabold tracking-tight mb-8">Honest outcomes</h2>
+        <ul class="space-y-4">
+          {impact.map((item) => (
+            <li class="flex items-start gap-3 text-sm text-on-surface-variant leading-relaxed">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="md:col-span-5 glass-card rounded-xl p-10 inner-highlight">
+        <span class="font-label text-[10px] tracking-[0.25em] text-primary font-bold uppercase mb-6 block">Tech Stack</span>
+        <h2 class="font-headline text-2xl font-extrabold tracking-tight mb-8">Tools used</h2>
+        <div class="flex flex-wrap gap-2">
+          {stack.map((item) => (
+            <span class="flex items-center gap-2 bg-primary/10 text-primary text-xs font-bold px-3 py-1.5 rounded-full border border-primary/20">
+              <span class="material-symbols-outlined text-sm">{item.icon}</span>
+              {item.label}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="md:col-span-12 glass-card rounded-2xl p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8 inner-highlight relative overflow-hidden">
+        <div class="absolute inset-0 bg-primary/5 pointer-events-none"></div>
+        <div class="relative z-10">
+          <h3 class="font-headline text-2xl md:text-3xl font-extrabold tracking-tight mb-2">Have a similar project?</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed max-w-lg">
+            Whether it's a SaaS product, internal tooling, or a complex integration — let's talk about what you're building.
+          </p>
+        </div>
+        <button class="relative z-10 shrink-0 text-white px-8 py-4 rounded-xl font-extrabold text-sm hover:scale-105 transition-all shadow-2xl neon-glow-primary hover:neon-glow-hover active:scale-95 cta-gradient whitespace-nowrap">
+          Get in Touch
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

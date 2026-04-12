@@ -9,18 +9,20 @@ const studies = [
     title: "Ntensewrap",
     description: "Brand website for a professional vehicle styling company specializing in vinyl wraps, commercial fleet branding, and paint protection films (PPF).",
     logo: ntensewrapTh,
+    url: "/case-studies/ntensewrap",
   },
   {
     tag: "Case Study: Web Tool",
     title: "Drawpoint",
     description: "A no-code platform that lets you create, customize, and embed interactive maps and images into any website — no developers required.",
     logo: drawpointTh,
+    url: "/case-studies/drawpoint",
   },
 ];
 ---
 
 {studies.map((study) => (
-  <div class="md:col-span-6 glass-card rounded-xl overflow-hidden group inner-highlight">
+  <div class="md:col-span-6 glass-card rounded-xl overflow-hidden group inner-highlight cursor-pointer" onclick={`if(!window.getSelection().toString())window.location.href='${study.url}'`}>
     <div class="h-72 bg-surface-container-highest relative overflow-hidden">
       <Image
         class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
@@ -37,7 +39,7 @@ const studies = [
     <div class="p-10">
       <h4 class="font-headline text-2xl font-bold mb-3">{study.title}</h4>
       <p class="text-on-surface-variant text-sm mb-8 leading-relaxed">{study.description}</p>
-      <a class="text-primary text-xs font-bold uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all" href="#">
+      <a class="text-primary text-xs font-bold uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all" href={study.url}>
         Explore Technical Breakdown <span class="material-symbols-outlined text-sm">north_east</span>
       </a>
     </div>

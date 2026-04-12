@@ -1,0 +1,204 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import { Image } from "astro:assets";
+import thumbnail from "../../assets/logos/aintboard.png";
+
+const delivered = [
+  { icon: "lock", label: "User Authentication System", detail: "Built a secure auth flow using Supabase, handling sign-up, login, and session management across the platform." },
+  { icon: "touch_app", label: "Interactive UI Components", detail: "Developed reusable, dynamic components that handle multiple interaction states cleanly and consistently." },
+  { icon: "devices", label: "Responsive Page Design", detail: "Created fully responsive layouts that adapt seamlessly across mobile, tablet, and desktop screen sizes." },
+  { icon: "edit_note", label: "Reusable Form System", detail: "Designed interactive forms with validation, multiple states, and consistent behavior across the application." },
+  { icon: "upgrade", label: "Subscription Upgrade Flow", detail: "Improved the upgrade experience using overlay components, reducing friction in the path to paid plans." },
+];
+
+const impact = [
+  "Simplified how users interact with the platform day-to-day",
+  "Improved usability and consistency across all device sizes",
+  "Made feature expansion easier through reusable component patterns",
+  "Reduced friction in the upgrade and onboarding flows",
+];
+
+const stack = [
+  { label: "Next.js / React", icon: "code" },
+  { label: "Supabase", icon: "lock" },
+  { label: "Tailwind CSS", icon: "style" },
+  { label: "Shadcn UI", icon: "widgets" },
+  { label: "TypeScript", icon: "data_object" },
+  { label: "PayPal", icon: "payments" },
+];
+
+const process = [
+  { step: "01", title: "Usability First", detail: "Focused on keeping a complex, multi-feature platform simple and approachable for everyday users." },
+  { step: "02", title: "Reusable Systems", detail: "Built components designed for reuse across the platform, reducing duplication and keeping the codebase clean." },
+  { step: "03", title: "Reduce Friction", detail: "Identified and improved interaction flows where users were dropping off or getting confused." },
+  { step: "04", title: "Support & Mentorship", detail: "Shared patterns and supported team members to speed up onboarding and maintain consistency." },
+];
+---
+
+<Layout>
+  <Nav />
+
+  <main class="max-w-7xl mx-auto px-6 pt-40 pb-24">
+
+    <!-- Back -->
+    <a href="/case-studies" class="inline-flex items-center gap-2 text-on-surface-variant text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors mb-12 group">
+      <span class="material-symbols-outlined text-sm group-hover:-translate-x-1 transition-transform">arrow_back</span>
+      All Case Studies
+    </a>
+
+    <!-- Hero -->
+    <div class="glass-card rounded-2xl overflow-hidden inner-highlight mb-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12">
+        <div class="lg:col-span-5 bg-surface-container-highest relative overflow-hidden min-h-[300px] flex items-center justify-center">
+          <Image
+            class="max-h-40 w-auto object-contain transition-transform duration-700"
+            alt="AintBoard"
+            src={thumbnail}
+          />
+          <div class="absolute inset-0 bg-gradient-to-r from-transparent to-surface-container/60 pointer-events-none hidden lg:block"></div>
+        </div>
+        <div class="lg:col-span-7 p-10 md:p-14 flex flex-col justify-center gap-6">
+          <div>
+            <span class="font-label text-[10px] tracking-[0.25em] text-primary font-bold uppercase mb-4 block">Product · 2023</span>
+            <h1 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.05] mb-4">AintBoard</h1>
+            <p class="text-on-surface-variant text-base leading-relaxed max-w-xl">
+              A web platform where players can manage their game libraries, find others nearby, and organize game sessions — all in one place.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <a href="https://www.linkedin.com/company/aintboard/" target="_blank" rel="noopener noreferrer" class="text-white px-6 py-3 rounded-lg font-bold text-sm flex items-center gap-2 cta-gradient neon-glow-primary hover:neon-glow-hover transition-all hover:-translate-y-0.5">
+              View Project <span class="material-symbols-outlined text-sm">open_in_new</span>
+            </a>
+            <a href="#" class="text-primary px-6 py-3 rounded-lg font-bold text-sm flex items-center gap-2 border border-primary/30 hover:bg-primary/10 transition-all">
+              Start a Project <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+
+      <!-- The Challenge -->
+      <div class="md:col-span-5 glass-card rounded-xl p-10 inner-highlight">
+        <span class="font-label text-[10px] tracking-[0.25em] text-primary font-bold uppercase mb-6 block">The Challenge</span>
+        <h2 class="font-headline text-2xl font-extrabold tracking-tight mb-8">Connecting players beyond the table</h2>
+        <ul class="space-y-4">
+          {[
+            "No single platform for library tracking and player discovery",
+            "Coordinating sessions was manual and fragmented",
+            "Needed a system that supports real interactions and transactions",
+            "UI had to remain simple despite multiple features",
+          ].map((item) => (
+            <li class="flex items-start gap-3 text-sm text-on-surface-variant leading-relaxed">
+              <span class="material-symbols-outlined text-primary text-base mt-0.5 shrink-0">arrow_right</span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- The Solution -->
+      <div class="md:col-span-7 glass-card rounded-xl p-10 inner-highlight relative overflow-hidden group">
+        <div class="absolute -right-16 -top-16 w-64 h-64 bg-primary/10 rounded-full blur-[80px] group-hover:bg-primary/20 transition-all duration-700"></div>
+        <span class="font-label text-[10px] tracking-[0.25em] text-primary font-bold uppercase mb-6 block">The Solution</span>
+        <h2 class="font-headline text-2xl font-extrabold tracking-tight mb-8">What I built</h2>
+        <ul class="space-y-4">
+          {[
+            "Developed reusable components for dynamic UI interactions across the platform",
+            "Built a secure authentication system using Supabase",
+            "Created responsive layouts across all key pages",
+            "Designed interactive forms with multiple states and validation",
+            "Improved the upgrade flow using overlay components to reduce friction",
+            "Supported team growth through mentorship and shared component patterns",
+          ].map((item) => (
+            <li class="flex items-start gap-3 text-sm text-on-surface-variant leading-relaxed">
+              <span class="material-symbols-outlined text-primary text-base mt-0.5 shrink-0" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Delivered -->
+      <div class="md:col-span-12 glass-card rounded-xl p-10 inner-highlight">
+        <span class="font-label text-[10px] tracking-[0.25em] text-primary font-bold uppercase mb-6 block">Key Deliverables</span>
+        <h2 class="font-headline text-2xl font-extrabold tracking-tight mb-8">What was built and shipped</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          {delivered.map((item) => (
+            <div class="bg-white/5 border border-white/5 hover:border-primary/20 rounded-xl p-5 flex flex-col gap-3 transition-all group/item">
+              <div class="w-10 h-10 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center group-hover/item:bg-primary/20 transition-colors">
+                <span class="material-symbols-outlined text-primary text-xl">{item.icon}</span>
+              </div>
+              <h4 class="font-headline font-bold text-sm text-white leading-snug">{item.label}</h4>
+              <p class="text-xs text-on-surface-variant leading-relaxed">{item.detail}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Process -->
+      <div class="md:col-span-12 glass-card rounded-xl p-10 inner-highlight">
+        <span class="font-label text-[10px] tracking-[0.25em] text-primary font-bold uppercase mb-6 block">Process</span>
+        <h2 class="font-headline text-2xl font-extrabold tracking-tight mb-8">How I approached it</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {process.map((item) => (
+            <div class="space-y-3">
+              <div class="text-4xl font-headline font-extrabold text-primary/15">{item.step}</div>
+              <h4 class="font-headline font-bold text-primary text-lg">{item.title}</h4>
+              <p class="text-sm text-on-surface-variant leading-relaxed">{item.detail}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Impact + Stack -->
+      <div class="md:col-span-7 glass-card rounded-xl p-10 inner-highlight">
+        <span class="font-label text-[10px] tracking-[0.25em] text-primary font-bold uppercase mb-6 block">Impact</span>
+        <h2 class="font-headline text-2xl font-extrabold tracking-tight mb-8">What changed</h2>
+        <ul class="space-y-4">
+          {impact.map((item) => (
+            <li class="flex items-start gap-3 text-sm text-on-surface-variant leading-relaxed">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0"></span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="md:col-span-5 glass-card rounded-xl p-10 inner-highlight">
+        <span class="font-label text-[10px] tracking-[0.25em] text-primary font-bold uppercase mb-6 block">Tech Stack</span>
+        <h2 class="font-headline text-2xl font-extrabold tracking-tight mb-8">Tools used</h2>
+        <div class="flex flex-wrap gap-2">
+          {stack.map((item) => (
+            <span class="flex items-center gap-2 bg-primary/10 text-primary text-xs font-bold px-3 py-1.5 rounded-full border border-primary/20">
+              <span class="material-symbols-outlined text-sm">{item.icon}</span>
+              {item.label}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="md:col-span-12 glass-card rounded-2xl p-10 md:p-16 flex flex-col items-center text-center relative overflow-hidden inner-highlight">
+        <div class="absolute inset-0 bg-primary/5 pointer-events-none"></div>
+        <div class="absolute -top-32 -left-32 w-96 h-96 bg-primary/10 rounded-full blur-[120px]"></div>
+        <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-primary/10 rounded-full blur-[120px]"></div>
+        <div class="relative z-10 space-y-6 max-w-2xl">
+          <h3 class="font-headline text-3xl md:text-4xl font-extrabold tracking-tight">Building something like this?</h3>
+          <p class="text-on-surface-variant text-base leading-relaxed">
+            Let's build what your business needs next — platforms that bring your users together.
+          </p>
+          <button class="text-white px-8 py-4 rounded-xl font-extrabold text-sm hover:scale-105 transition-all shadow-2xl neon-glow-primary hover:neon-glow-hover active:scale-95 cta-gradient">
+            Start Your Project
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
