@@ -1,29 +1,29 @@
 ---
 import { Image } from "astro:assets";
-import ntensewrapLogo from "../assets/logos/ntensewrap.png";
-import drawpointLogo from "../assets/logos/drawpoint-logo.png";
+import ntensewrapTh from "../assets/thumbnail-nw.jpg";
+import drawpointTh from "../assets/thumbnail-drawpoint.png";
 
 const studies = [
   {
-    tag: "Case Study: Automotive",
-    title: "Booking Intelligence Engine",
-    description: "Integrated custom API layers with legacy scheduling software to increase conversion by 45%.",
-    logo: ntensewrapLogo,
+    tag: "Case Study: Vehicle Styling",
+    title: "Ntensewrap",
+    description: "Brand website for a professional vehicle styling company specializing in vinyl wraps, commercial fleet branding, and paint protection films (PPF).",
+    logo: ntensewrapTh,
   },
   {
-    tag: "Case Study: Infrastructure",
-    title: "Distributed Knowledge Vault",
-    description: "High-availability documentation system optimized for search speed across 150+ globally distributed nodes.",
-    logo: drawpointLogo,
+    tag: "Case Study: Web Tool",
+    title: "Drawpoint",
+    description: "A no-code platform that lets you create, customize, and embed interactive maps and images into any website — no developers required.",
+    logo: drawpointTh,
   },
 ];
 ---
 
 {studies.map((study) => (
   <div class="md:col-span-6 glass-card rounded-xl overflow-hidden group inner-highlight">
-    <div class="h-72 bg-surface-container-highest relative overflow-hidden flex items-center justify-center">
+    <div class="h-72 bg-surface-container-highest relative overflow-hidden">
       <Image
-        class="max-h-32 w-auto object-contain opacity-80 transition-all duration-1000 group-hover:scale-110 group-hover:opacity-100"
+        class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
         alt={study.title}
         src={study.logo}
       />

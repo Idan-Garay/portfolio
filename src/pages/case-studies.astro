@@ -1,0 +1,164 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
+import { Image } from "astro:assets";
+import ntensewrapTh from "../assets/thumbnail-nw.jpg";
+import drawpointTh from "../assets/thumbnail-drawpoint.png";
+import aintboardLogo from "../assets/logos/aintboard.png";
+
+const studies = [
+  {
+    tag: "Vehicle Styling",
+    year: "2024",
+    logo: ntensewrapTh,
+    title: "Ntensewrap",
+    subtitle: "Brand Website & Lead Generation",
+    description:
+      "Ntensewrap is a professional vehicle styling company offering high-quality vinyl wraps, commercial fleet branding, and paint protection films (PPF). They needed a website that matched the premium quality of their work — fast, visually striking, and built to convert visitors into booked consultations.",
+    results: [
+      { label: "Mobile-first build", value: "✓" },
+      { label: "Fast by default", value: "✓" },
+      { label: "Gallery-led layout", value: "✓" },
+    ],
+    stack: ["Next.js", "Tailwind CSS", "TypeScript", "Netlify"],
+    href: "#",
+  },
+  {
+    tag: "Web Tool",
+    year: "2026",
+    logo: drawpointTh,
+    title: "Drawpoint",
+    subtitle: "No-Code Interactive Map Builder",
+    description:
+      "Drawpoint gives you a simple way to make your maps and images interactive. Add clickable points, custom labels, and embedded content — then drop it into any site with one line of code. No developers required.",
+    results: [
+      { label: "Visual, no-code editor", value: "✓" },
+      { label: "Instant embed code", value: "✓" },
+      { label: "Any website, any stack", value: "✓" },
+    ],
+    stack: ["Stripe", "Brevo", "Sentry", "Retool", "React", "Firebase", "Node.js"],
+    href: "#",
+  },
+  {
+    tag: "Product",
+    year: "2023",
+    logo: aintboardLogo,
+    title: "AintBoard",
+    subtitle: "Board Game Community Platform",
+    description:
+      "AintBoard is a web platform built for board game enthusiasts to track their game libraries, find players nearby, and schedule game sessions. It handles everything from discovery to payment — giving the community one place to connect and play.",
+    results: [
+      { label: "Game library tracker", value: "✓" },
+      { label: "Session scheduling", value: "✓" },
+      { label: "Integrated payments", value: "✓" },
+    ],
+    stack: ["Next.js", "PayPal", "MongoDB", "TypeScript"],
+    href: "#",
+  },
+];
+---
+
+<Layout>
+  <Nav activePage="case-studies" />
+
+  <main class="max-w-7xl mx-auto px-6 pt-40 pb-24">
+
+    <!-- Page Header -->
+    <div class="mb-16">
+      <a href="/" class="inline-flex items-center gap-2 text-on-surface-variant text-xs font-bold uppercase tracking-widest hover:text-primary transition-colors mb-8 group">
+        <span class="material-symbols-outlined text-sm group-hover:-translate-x-1 transition-transform">arrow_back</span>
+        Back to Home
+      </a>
+      <span class="font-label text-[10px] tracking-[0.2em] text-primary font-bold uppercase mb-4 block">Portfolio</span>
+      <h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.05] mb-6">
+        Case Studies
+      </h1>
+      <p class="text-on-surface-variant text-lg max-w-2xl leading-relaxed">
+        Real problems. Clear solutions. Built for results. See how each project was designed and delivered.
+      </p>
+    </div>
+
+    <!-- Case Studies -->
+    <div class="flex flex-col gap-6">
+      {studies.map((study, i) => (
+        <div class="glass-card rounded-2xl overflow-hidden inner-highlight group">
+          <div class="grid grid-cols-1 lg:grid-cols-12">
+
+            <!-- Logo Panel -->
+            <div class="lg:col-span-3 bg-surface-container-highest relative overflow-hidden min-h-[220px]">
+              <Image
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                alt={study.title}
+                src={study.logo}
+              />
+              <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent pointer-events-none"></div>
+              <div class="absolute top-5 left-5">
+                <span class="bg-black/60 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] text-white border border-white/10">
+                  {study.tag}
+                </span>
+              </div>
+              <div class="absolute bottom-5 right-5 text-[10px] text-on-surface-variant font-bold tracking-widest uppercase">
+                {study.year}
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="lg:col-span-9 p-10 flex flex-col justify-between gap-8">
+              <div>
+                <p class="text-[10px] tracking-[0.25em] text-primary font-bold uppercase mb-3">{study.subtitle}</p>
+                <h2 class="font-headline text-3xl font-extrabold tracking-tight mb-4">{study.title}</h2>
+                <p class="text-on-surface-variant leading-relaxed text-sm max-w-2xl">{study.description}</p>
+              </div>
+
+              <!-- Results -->
+              <div class="grid grid-cols-3 gap-4">
+                {study.results.map((result) => (
+                  <div class="bg-white/5 rounded-xl p-4 border border-white/5 hover:border-primary/20 transition-all">
+                    <div class="font-headline text-2xl font-extrabold text-primary mb-1">{result.value}</div>
+                    <div class="text-[10px] text-on-surface-variant font-bold uppercase tracking-wider">{result.label}</div>
+                  </div>
+                ))}
+              </div>
+
+              <!-- Footer row -->
+              <div class="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-white/5">
+                <div class="flex flex-wrap gap-2">
+                  {study.stack.map((tech) => (
+                    <span class="bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-primary/20">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <a
+                  href={study.href}
+                  class="text-primary text-xs font-bold uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all"
+                >
+                  Full Breakdown <span class="material-symbols-outlined text-sm">north_east</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-12 glass-card rounded-2xl p-12 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 inner-highlight relative overflow-hidden">
+      <div class="absolute inset-0 bg-primary/5 pointer-events-none"></div>
+      <div class="relative z-10">
+        <h3 class="font-headline text-2xl md:text-3xl font-extrabold tracking-tight mb-3">Have a project in mind?</h3>
+        <p class="text-on-surface-variant text-sm max-w-lg leading-relaxed">
+          Let's talk about what you're building and how to make it scale.
+        </p>
+      </div>
+      <button class="relative z-10 shrink-0 text-white px-8 py-4 rounded-xl font-extrabold text-sm hover:scale-105 transition-all shadow-2xl neon-glow-primary hover:neon-glow-hover active:scale-95 cta-gradient whitespace-nowrap">
+        Request a Quote
+      </button>
+    </div>
+
+  </main>
+
+  <Footer />
+</Layout>
