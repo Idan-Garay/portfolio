@@ -78,7 +78,7 @@ export default function TechnicalWorkflow() {
                   ? "text-primary drop-shadow-[0_0_12px_rgba(0,71,171,0.6)]"
                   : isIdle
                     ? "text-primary/40 animate-pulse"
-                    : "text-primary/10"
+                    : i == 1? "text-primary/30" : "text-primary/20"
               }`}
             >
               {item.step}
