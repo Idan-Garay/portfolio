@@ -73,6 +73,28 @@ const options = {
   ],
 };
 
+function CardIconHeader({
+  icon,
+  title,
+  subtitle,
+}: {
+  icon: string;
+  title: React.ReactNode;
+  subtitle?: string;
+}) {
+  return (
+    <div className="flex items-center gap-4">
+      <div className="w-10 h-10 rounded-lg bg-primary/15 border border-primary/25 flex items-center justify-center shrink-0">
+        <span className="material-symbols-outlined text-primary text-xl">{icon}</span>
+      </div>
+      <div>
+        <CardTitle className="font-headline text-lg font-bold text-foreground">{title}</CardTitle>
+        {subtitle && <p className="text-sm text-muted-foreground mt-1">{subtitle}</p>}
+      </div>
+    </div>
+  );
+}
+
 function OptionGroup({
   field,
   value,
@@ -119,9 +141,7 @@ function AboutSection({
   return (
     <Card className={CARD}>
       <CardHeader className={CARD_HEADER}>
-        <CardTitle className="font-headline text-lg font-bold text-foreground">
-          About you
-        </CardTitle>
+        <CardIconHeader icon="person" title="About you" />
       </CardHeader>
       <CardContent className={cn(CARD_CONTENT, "grid grid-cols-1 md:grid-cols-3 gap-4")}>
         {(["name", "email", "business"] as const).map((field) => (
@@ -195,7 +215,13 @@ function SuccessState({ onReset }: { onReset: () => void }) {
 }
 
 export default function ProjectForm() {
-  const [activeTab, setActiveTab] = useState<Intent>("project");
+  const [activeTab, setActiveTab] = useState<Intent>(() => {
+    if (typeof window !== "undefined") {
+      const tab = new URLSearchParams(window.location.search).get("tab");
+      if (tab === "quote") return "quote";
+    }
+    return "project";
+  });
   const [forms, setForms] = useState<Record<Intent, FormData>>({
     project: makeInitial("project"),
     quote: makeInitial("quote"),
@@ -270,9 +296,7 @@ export default function ProjectForm() {
           {/* Project context */}
           <Card className={CARD}>
             <CardHeader className={CARD_HEADER}>
-              <CardTitle className="font-headline text-lg font-bold text-foreground">
-                Project context
-              </CardTitle>
+              <CardIconHeader icon="tune" title="Project context" />
             </CardHeader>
             <CardContent className={cn(CARD_CONTENT, "space-y-6")}>
               <div className="space-y-3">
@@ -294,8 +318,7 @@ export default function ProjectForm() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Card className={CARD}>
               <CardHeader className={CARD_HEADER}>
-                <CardTitle className="font-headline text-lg font-bold text-foreground">Budget</CardTitle>
-                <p className="text-sm text-muted-foreground mt-1">Optional — helps me suggest the right scope.</p>
+                <CardIconHeader icon="payments" title="Budget" subtitle="Optional — helps me suggest the right scope." />
               </CardHeader>
               <CardContent className={CARD_CONTENT}>
                 <OptionGroup field="budget" value={form.budget} items={options.budget} onChange={set} />
@@ -303,8 +326,7 @@ export default function ProjectForm() {
             </Card>
             <Card className={CARD}>
               <CardHeader className={CARD_HEADER}>
-                <CardTitle className="font-headline text-lg font-bold text-foreground">Timeline</CardTitle>
-                <p className="text-sm text-muted-foreground mt-1">When are you hoping to get started?</p>
+                <CardIconHeader icon="schedule" title="Timeline" subtitle="When are you hoping to get started?" />
               </CardHeader>
               <CardContent className={CARD_CONTENT}>
                 <OptionGroup field="timeline" value={form.timeline} items={options.timeline} onChange={set} />
@@ -315,7 +337,7 @@ export default function ProjectForm() {
           {/* Details */}
           <Card className={CARD}>
             <CardHeader className={CARD_HEADER}>
-              <CardTitle className="font-headline text-lg font-bold text-foreground">Tell me more <span className="text-primary">*</span></CardTitle>
+              <CardIconHeader icon="edit_note" title={<>Tell me more <span className="text-primary">*</span></>} />
             </CardHeader>
             <CardContent className={CARD_CONTENT}>
               <Textarea
@@ -346,19 +368,7 @@ export default function ProjectForm() {
           <Card className={cn(CARD, "relative overflow-hidden")}>
             <div className="absolute -right-16 -top-16 w-64 h-64 bg-primary/8 rounded-full blur-[80px] pointer-events-none" />
             <CardHeader className={CARD_HEADER}>
-              <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-lg bg-primary/15 border border-primary/25 flex items-center justify-center shrink-0">
-                  <span className="material-symbols-outlined text-primary text-xl">payments</span>
-                </div>
-                <div>
-                  <CardTitle className="font-headline text-lg font-bold text-foreground">
-                    What's your budget?
-                  </CardTitle>
-                  <p className="text-sm text-muted-foreground mt-1">
-                    This helps me scope the work and give you an accurate quote.
-                  </p>
-                </div>
-              </div>
+              <CardIconHeader icon="payments" title="What's your budget?" subtitle="This helps me scope the work and give you an accurate quote." />
             </CardHeader>
             <CardContent className={CARD_CONTENT}>
               <OptionGroup field="budget" value={form.budget} items={options.budget} onChange={set} />
@@ -368,8 +378,7 @@ export default function ProjectForm() {
           {/* Timeline */}
           <Card className={CARD}>
             <CardHeader className={CARD_HEADER}>
-              <CardTitle className="font-headline text-lg font-bold text-foreground">Timeline</CardTitle>
-              <p className="text-sm text-muted-foreground mt-1">When do you need this done?</p>
+              <CardIconHeader icon="schedule" title="Timeline" subtitle="When do you need this done?" />
             </CardHeader>
             <CardContent className={CARD_CONTENT}>
               <OptionGroup field="timeline" value={form.timeline} items={options.timeline} onChange={set} />
@@ -379,7 +388,7 @@ export default function ProjectForm() {
           {/* Brief description */}
           <Card className={CARD}>
             <CardHeader className={CARD_HEADER}>
-              <CardTitle className="font-headline text-lg font-bold text-foreground">What do you need? <span className="text-primary">*</span></CardTitle>
+              <CardIconHeader icon="edit_note" title={<>What do you need? <span className="text-primary">*</span></>} />
             </CardHeader>
             <CardContent className={CARD_CONTENT}>
               <Textarea
