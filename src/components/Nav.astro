@@ -13,16 +13,18 @@ function isActive(href: string) {
 }
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 flex justify-center items-center w-full">
+<header transition:persist class="fixed top-0 left-0 right-0 z-50 flex justify-center items-center w-full nav-entrance">
   <nav class="glass-nav rounded-full mt-6 mx-auto w-fit px-6 py-2 shadow-[0_0_30px_rgba(0,0,0,0.5)] flex items-center gap-8">
-    <a href="/" class="font-headline font-extrabold text-primary tracking-tighter text-lg">.Dev</a>
-    <div class="hidden md:flex gap-6 items-center">
+    <a href="/" class="font-headline font-extrabold text-primary tracking-tighter text-lg transition-opacity hover:opacity-75">.Dev</a>
+    <div class="hidden md:flex gap-1 items-center relative" id="nav-links">
       {navLinks.map((link) => (
         <a
+          data-navlink
+          data-href={link.href}
           class:list={[
-            'font-headline text-sm tracking-tight transition-colors',
+            'font-headline text-sm tracking-tight relative z-10 px-3 py-1.5 rounded-full transition-colors duration-200',
             isActive(link.href)
-              ? 'font-bold text-primary border-b-2 border-primary/50 pb-0.5'
+              ? 'font-bold text-white'
               : 'font-medium text-zinc-400 hover:text-white',
           ]}
           href={link.href}
@@ -30,9 +32,75 @@ function isActive(href: string) {
           {link.label}
         </a>
       ))}
+      <span id="nav-pill" class="absolute inset-y-0 rounded-full bg-primary/20 border border-primary/30 pointer-events-none transition-[left,width] duration-300 ease-out"></span>
     </div>
-    <a href="/start-a-project" class="hover:bg-primary-dim text-white px-5 py-2 rounded-full text-sm font-bold transition-all hover:scale-105 active:scale-95 neon-glow-primary cta-gradient">
+    <a href="/start-a-project" class="hover:bg-primary-dim text-white px-5 py-2 rounded-full text-sm font-bold transition-all duration-200 hover:scale-105 active:scale-95 neon-glow-primary cta-gradient">
       Start a Project
     </a>
   </nav>
 </header>
+
+<style>
+  .nav-entrance {
+    animation: nav-slide-down 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  @keyframes nav-slide-down {
+    from {
+      opacity: 0;
+      transform: translateY(-24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<script>
+  function updateNav() {
+    const pill = document.getElementById('nav-pill') as HTMLElement | null;
+    const links = document.querySelectorAll<HTMLAnchorElement>('[data-navlink]');
+    const pathname = window.location.pathname;
+
+    let activeEl: HTMLAnchorElement | null = null;
+
+    links.forEach((link) => {
+      const href = link.getAttribute('data-href')!;
+      const active = href === '/' ? pathname === '/' : pathname.startsWith(href);
+
+      if (active) {
+        link.classList.add('font-bold', 'text-white');
+        link.classList.remove('font-medium', 'text-zinc-400');
+        activeEl = link;
+      } else {
+        link.classList.remove('font-bold', 'text-white');
+        link.classList.add('font-medium', 'text-zinc-400');
+      }
+    });
+
+    if (pill) {
+      if (activeEl) {
+        const el = activeEl as HTMLElement;
+        pill.style.left = `${el.offsetLeft}px`;
+        pill.style.width = `${el.offsetWidth}px`;
+        pill.style.opacity = '1';
+      } else {
+        pill.style.opacity = '0';
+      }
+    }
+  }
+
+  // Only play entrance animation once per session
+  const header = document.querySelector('.nav-entrance') as HTMLElement | null;
+  if (header) {
+    if (sessionStorage.getItem('nav-entered')) {
+      header.style.animation = 'none';
+    } else {
+      sessionStorage.setItem('nav-entered', '1');
+    }
+  }
+
+  updateNav();
+  document.addEventListener('astro:page-load', updateNav);
+</script>

@@ -14,8 +14,46 @@ import { ClientRouter } from 'astro:transitions'
 		<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 		<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
 		<title>.Dev | Software Engineer</title>
+	<ClientRouter />
 	</head>
 	<body class="font-body text-on-surface antialiased">
 		<slot />
 	</body>
+
+	<script>
+		import { animate, inView, stagger } from 'motion';
+
+		function initAnimations() {
+			// Staggered grid
+			document.querySelectorAll('[data-grid-animate]').forEach((grid) => {
+				const cards = Array.from(grid.children) as HTMLElement[];
+				cards.forEach((card) => {
+					card.style.opacity = '0';
+					card.style.transform = 'translateY(8px)';
+				});
+				const stop = inView(grid, () => {
+					stop();
+					animate(
+						cards,
+						{ opacity: [0, 1], y: [8, 0] },
+						{ duration: 0.3, easing: 'ease-out', delay: stagger(0.06) }
+					);
+				}, { amount: 0.05 });
+			});
+
+			// Single card fade + lift
+			document.querySelectorAll('[data-animate-card]').forEach((card) => {
+				const el = card as HTMLElement;
+				el.style.opacity = '0';
+				el.style.transform = 'translateY(8px)';
+				const stop = inView(el, () => {
+					stop();
+					animate(el, { opacity: [0, 1], y: [8, 0] }, { duration: 0.3, easing: 'ease-out' });
+				}, { amount: 0.1 });
+			});
+		}
+
+		initAnimations();
+		document.addEventListener('astro:page-load', initAnimations);
+	</script>
 </html>
