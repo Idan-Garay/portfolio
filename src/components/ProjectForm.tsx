@@ -39,14 +39,14 @@ type FormData = {
 
 const makeInitial = (intent: Intent): FormData => ({
   intent,
-  name: "",
-  email: "",
-  business: "",
-  projectType: "",
-  goal: "",
-  budget: "",
-  timeline: "",
-  details: "",
+  name: "John Doe",
+  email: "john@example.com",
+  business: "Acme Inc.",
+  projectType: "website",
+  goal: "leads",
+  budget: "1k-3k",
+  timeline: "1-2months",
+  details: "Looking to build a modern landing page to generate more leads for our SaaS product.",
 });
 
 const options = {
@@ -237,14 +237,20 @@ export default function ProjectForm() {
       [activeTab]: { ...prev[activeTab], [field]: value },
     }));
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Replace with your form endpoint (Formspree, Resend, etc.)
-    setTimeout(() => {
-      setLoading(false);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("Failed");
       setSubmitted(true);
-    }, 1000);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleReset = () => {
