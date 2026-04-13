@@ -91,15 +91,25 @@ function isActive(href: string) {
     }
   }
 
-  // Only play entrance animation once per session
+  function stopNavAnimation() {
+    const header = document.querySelector('.nav-entrance') as HTMLElement | null;
+    if (header) header.style.animation = 'none';
+  }
+
   const header = document.querySelector('.nav-entrance') as HTMLElement | null;
   if (header) {
     if (sessionStorage.getItem('nav-entered')) {
       header.style.animation = 'none';
     } else {
-      sessionStorage.setItem('nav-entered', '1');
+      header.addEventListener('animationend', () => {
+        sessionStorage.setItem('nav-entered', '1');
+        header.style.animation = 'none';
+      }, { once: true });
     }
   }
+
+  // Kill animation after every view transition swap
+  document.addEventListener('astro:after-swap', stopNavAnimation);
 
   updateNav();
   document.addEventListener('astro:page-load', updateNav);
