@@ -3,29 +3,17 @@ export const prerender = false;
 import "dotenv/config";
 import type { APIRoute } from "astro";
 import nodemailer from "nodemailer";
-import { google } from "googleapis";
 
 export const POST: APIRoute = async ({ request }) => {
   const data = await request.json();
 
-  const oauth2Client = new google.auth.OAuth2(
-    process.env.GMAIL_CLIENT_ID,
-    process.env.GMAIL_CLIENT_SECRET,
-    "https://developers.google.com/oauthplayground"
-  );
-
-  oauth2Client.setCredentials({ refresh_token: process.env.GMAIL_REFRESH_TOKEN });
-  const { token: accessToken } = await oauth2Client.getAccessToken();
-
   const transporter = nodemailer.createTransport({
-    service: "gmail",
+    host: process.env.SMTP_HOST,
+    port: Number(process.env.SMTP_PORT),
+    secure: Number(process.env.SMTP_PORT) === 465,
     auth: {
-      type: "OAuth2",
-      user: process.env.GMAIL_USER,
-      clientId: process.env.GMAIL_CLIENT_ID,
-      clientSecret: process.env.GMAIL_CLIENT_SECRET,
-      refreshToken: process.env.GMAIL_REFRESH_TOKEN,
-      accessToken: accessToken!,
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
     },
   });
 
@@ -49,10 +37,18 @@ export const POST: APIRoute = async ({ request }) => {
     .join("\n");
 
   await transporter.sendMail({
-    from: `${data.name} <${data.email}>`,
-    to: "garayidan@gmail.com",
+    from: `${data.name} <${process.env.SMTP_USER}>`,
+    replyTo: `${data.name} <${data.email}>`,
+    to: "garayidan@gmail.com, hello@idanjoshua.dev",
     subject,
     text: lines,
+  });
+
+  await transporter.sendMail({
+    from: `Idan Joshua <${process.env.SMTP_USER}>`,
+    to: data.email,
+    subject: `Got your message, ${data.name.split(" ")[0]}!`,
+    text: `Hi ${data.name.split(" ")[0]},\n\nThanks for reaching out! I've received your ${isQuote ? "quote request" : "project submission"} and I'll get back to you within 24 hours.\n\nHere's a summary of what you sent:\n\n${lines}\n\n— Idan Joshua\nhello@idanjoshua.dev\nidanjoshua.dev`,
   });
 
   return new Response(JSON.stringify({ ok: true }), { status: 200 });
