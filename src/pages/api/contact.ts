@@ -49,7 +49,7 @@ export const POST: APIRoute = async ({ request }) => {
     .join("\n");
 
   await transporter.sendMail({
-    from: process.env.GMAIL_USER,
+    from: `${data.name} <${data.email}>`,
     to: "garayidan@gmail.com",
     subject,
     text: lines,
