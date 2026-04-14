@@ -39,14 +39,14 @@ type FormData = {
 
 const makeInitial = (intent: Intent): FormData => ({
   intent,
-  name: "John Doe",
-  email: "john@example.com",
-  business: "Acme Inc.",
-  projectType: "website",
-  goal: "leads",
-  budget: "1k-3k",
-  timeline: "1-2months",
-  details: "Looking to build a modern landing page to generate more leads for our SaaS product.",
+  name: "",
+  email: "",
+  business: "",
+  projectType: "",
+  goal: "",
+  budget: "",
+  timeline: "",
+  details: "",
 });
 
 const options = {
